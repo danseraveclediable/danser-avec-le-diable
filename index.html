@@ -1,23 +1,22 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#100b09">
-  <meta name="description" content="Danser avec le diable — Ma valse entre addiction et chemsex. Un récit vrai, sans filtre, de Romain.R. Disponible prochainement.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Danser avec le diable — le récit autobiographique de Romain.R, entre addiction, chemsex et reconstruction.">
+  <meta name="theme-color" content="#100d0c">
   <title>Danser avec le diable — Romain.R</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a class="skip-link" href="#contenu">Aller au contenu</a>
   <header class="site-header">
-    <a class="wordmark" href="#accueil" aria-label="Danser avec le diable, accueil">ROMAIN<span>.</span>R</a>
-    <button class="menu-toggle" aria-expanded="false" aria-controls="navigation">Menu <span aria-hidden="true">☰</span></button>
-    <nav id="navigation" class="navigation" aria-label="Navigation principale">
-      <a class="active" href="#accueil">Accueil</a>
+    <a class="logo" href="#accueil">ROMAIN<span>.R</span></a>
+    <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+    <nav class="navigation" id="navigation">
+      <a href="#accueil">Accueil</a>
       <a href="#livre">Le livre</a>
       <a href="#a-propos">À propos</a>
       <a href="#extraits">Extraits</a>
@@ -25,124 +24,83 @@
       <a href="#contact">Contact</a>
     </nav>
   </header>
-
-  <main id="contenu">
+  <main>
     <section class="hero" id="accueil">
-      <div class="hero-shade"></div>
-      <div class="hero-copy">
-        <p class="eyebrow">Un récit vrai. Sans filtre.</p>
-        <h1><span>DANSER</span><span class="title-small">AVEC LE</span><span class="red">DIABLE</span></h1>
-        <p class="subtitle">Ma valse entre addiction et chemsex</p>
-        <span class="red-rule"></span>
-        <p class="hero-description">Un témoignage intime sur la quête de liberté, les excès, les blessures et la reconstruction.<br>Entre ombres et lumière, un parcours de vie sans filtre.</p>
-        <a class="button button-red" href="#livre">Découvrir le livre <span aria-hidden="true">→</span></a>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="eyebrow">UN RÉCIT VRAI. SANS FILTRE.</p>
+        <h1>DANSER AVEC<br><span>LE DIABLE</span></h1>
+        <p class="subtitle">MA VALSE ENTRE ADDICTION ET CHEMSEX</p>
+        <p class="intro">Un témoignage intime sur la quête de liberté, les excès, les blessures et la reconstruction. Un parcours de vie sans filtre, entre ombres et lumière.</p>
+        <a class="button" href="#livre">DÉCOUVRIR LE LIVRE <span>↗</span></a>
       </div>
-      <p class="handwritten hero-note">Plus qu’un livre,<br>un morceau de moi.</p>
-      <div class="hero-credit">ROMAIN.R <span>—</span> TÉMOIGNAGE ENTRE LES OMBRES ET LA LUMIÈRE</div>
+      <span class="vertical-note">UNE HISTOIRE VÉCUE · UNE VOIX LIBRE</span>
     </section>
-
-    <section class="book-section section-wrap" id="livre">
-      <div class="book-visual">
-        <div class="book-mockup">
-          <div class="book-spine">DANSER AVEC LE DIABLE</div>
-          <img src="couverture-livre.png" alt="Couverture de Danser avec le diable" class="book-cover" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="cover-fallback"><span>ROMAIN.R</span><strong>DANSER<br><small>AVEC LE</small><br><em>DIABLE</em></strong><small>MA VALSE ENTRE ADDICTION<br>ET CHEMSEX</small></div>
+    <section class="book-section section" id="livre">
+      <div class="section-heading">
+        <p class="eyebrow">AU CŒUR DU RÉCIT</p>
+        <h2>Un livre. <em>Une vérité.</em></h2>
+        <p>Mettre des mots sur l'indicible. Regarder les ombres en face.</p>
+      </div>
+      <div class="book-layout">
+        <div class="book-art">
+          <img src="couverture-livre.png" alt="Couverture du livre Danser avec le diable">
         </div>
-        <p class="caption">Un livre. Une histoire. Une traversée.</p>
-      </div>
-      <div class="book-copy">
-        <p class="eyebrow">Le livre</p>
-        <h2>Une histoire vraie.<br><em class="red">Sans masque.</em></h2>
-        <p class="body-copy">Il y a des histoires que l’on raconte parce qu’elles se terminent bien. Et puis il y a celles que l’on raconte parce qu’elles ont failli ne jamais avoir de fin.</p>
-        <p class="body-copy">À travers ce récit intime, Romain.R revient sur les ombres, les excès, les blessures et les petits pas qui permettent de reprendre pied. Sans prétendre avoir toutes les réponses. Sans effacer le passé.</p>
-        <a class="text-link" href="#extraits">Lire un extrait <span aria-hidden="true">↗</span></a>
-        <div class="availability"><span class="availability-dot"></span><div><strong>Disponible prochainement</strong><p>Les informations de publication seront annoncées ici.</p></div></div>
-      </div>
-    </section>
-
-    <section class="formats" aria-label="Formats à venir">
-      <div class="format-card">
-        <span class="format-icon" aria-hidden="true">▤</span>
-        <p class="eyebrow">Édition papier</p>
-        <h3>Un exemplaire à garder.</h3>
-        <p>Une édition imprimée, pensée pour prendre sa place dans votre bibliothèque. Les détails seront communiqués prochainement.</p>
-        <span class="format-status">Informations à venir</span>
-      </div>
-      <div class="format-divider"></div>
-      <div class="format-card">
-        <span class="format-icon" aria-hidden="true">▯</span>
-        <p class="eyebrow">Version numérique</p>
-        <h3>L’histoire, partout avec vous.</h3>
-        <p>Une version numérique pour lire le récit sur liseuse, tablette ou téléphone, dès sa disponibilité.</p>
-        <span class="format-status">Informations à venir</span>
+        <div class="book-copy">
+          <p class="eyebrow">LE TÉMOIGNAGE</p>
+          <h3>Danser avec<br>le diable</h3>
+          <p class="book-subtitle">Ma valse entre addiction et chemsex</p>
+          <p>À travers ce récit autobiographique, je raconte les blessures, les rencontres, les excès et les moments où tout semble vaciller. Mais aussi les prises de conscience, les mains tendues et les premiers pas vers soi.</p>
+          <p>Ce livre ne prétend pas avoir toutes les réponses. Il raconte simplement une histoire, avec ses zones d'ombre et ses éclats de lumière.</p>
+          <div class="format">
+            <span>01</span><div><strong>ÉDITION PAPIER</strong><small>Disponible prochainement</small></div>
+          </div>
+          <div class="format">
+            <span>02</span><div><strong>ÉDITION NUMÉRIQUE</strong><small>Disponible prochainement</small></div>
+          </div>
+        </div>
       </div>
     </section>
-
-    <section class="promise-strip">
-      <div class="paper-texture"></div>
-      <blockquote>« Une plongée brute et sincère<br>dans une vie marquée par les excès,<br>les blessures et la reconstruction. »</blockquote>
-      <span class="red-rule"></span>
-      <div class="line-art" aria-hidden="true">
-        <svg viewBox="0 0 500 180" role="img">
-          <path d="M32 150 C65 118 50 80 89 58 C105 48 121 60 130 72 C143 38 174 30 194 48 C215 66 201 95 226 105 C247 113 258 91 279 93 C307 95 315 127 348 123 C376 120 392 94 420 99 C444 104 450 133 481 142" />
-          <path d="M70 147 C97 134 111 115 113 92 M122 72 C138 92 147 113 164 121 M193 49 C177 77 181 93 196 105 M230 105 C255 125 276 132 298 119 M346 123 C366 142 391 146 416 139" />
-          <path class="red-stroke" d="M240 174 C260 151 254 133 279 121 S317 95 303 72 S324 41 349 17 M285 168 C302 145 325 145 339 123 S372 94 361 75 S382 42 409 25" />
-        </svg>
-      </div>
+    <section class="quote-section">
+      <p class="eyebrow">ENTRE LES OMBRES ET LA LUMIÈRE</p>
+      <blockquote>« On ne choisit pas toujours ce qui nous brise. Mais, parfois, on peut choisir ce que l'on fait des morceaux. »</blockquote>
+      <span class="quote-line"></span>
     </section>
-
-    <section class="excerpt-section" id="extraits">
-      <div class="excerpt-image" role="img" aria-label="Détail sombre et cinématographique, évocation des ombres et de la lumière">
-        <div class="image-grain"></div>
-      </div>
-      <div class="excerpt-copy">
-        <p class="eyebrow">Quelques lignes, un premier pas</p>
-        <h2>Les mots que l’on garde.<br><em class="red">Ceux qu’on ose enfin dire.</em></h2>
-        <blockquote>« Il y a des histoires que l’on raconte parce qu’elles se terminent bien. Et puis il y a celles que l’on raconte parce qu’elles ont failli ne jamais avoir de fin. »</blockquote>
-        <p class="excerpt-note">Un aperçu de l’univers du livre. D’autres extraits pourront être ajoutés au fil de la préparation de la sortie.</p>
-        <a class="button button-outline" href="#contact">Suivre la sortie <span aria-hidden="true">→</span></a>
-      </div>
-    </section>
-
-    <section class="about-section section-wrap" id="a-propos">
-      <div>
-        <p class="eyebrow">Derrière les pages</p>
-        <h2>Écrire pour regarder<br><em class="red">l’histoire en face.</em></h2>
-      </div>
+    <section class="about-section section" id="a-propos">
+      <p class="eyebrow">DERRIÈRE LES MOTS</p>
+      <h2>Écrire pour<br><em>ne plus se taire.</em></h2>
       <div class="about-copy">
-        <p>Danser avec le diable est un témoignage personnel sur un parcours traversé par l’addiction, le chemsex, les blessures et la volonté de se reconstruire.</p>
-        <p>Ce livre ne cherche pas à donner de leçon ni à prétendre que tout est simple. Il raconte un chemin, avec ses contradictions, ses rechutes, ses prises de conscience et cette envie de continuer à avancer.</p>
-        <p class="signature">Romain.R</p>
+        <p>Je suis Romain.R. J'ai longtemps cherché comment raconter ce qui se passait à l'intérieur, comment donner du sens à des expériences qui m'avaient laissé des traces.</p>
+        <p>Écrire ce livre, c'est revenir sur mon histoire sans prétendre l'effacer. C'est accepter les contradictions, les fragilités et le chemin qu'il reste à parcourir.</p>
+        <p>Ce récit est le mien. Peut-être qu'en le lisant, quelqu'un se sentira un peu moins seul.</p>
       </div>
     </section>
-
-    <section class="faq-section" id="faq">
-      <div class="section-wrap">
-        <p class="eyebrow">Questions fréquentes</p>
-        <h2>À savoir, pour le moment.</h2>
-        <details><summary>Quand le livre sera-t-il disponible ?</summary><p>La publication est en préparation. La date et les modalités seront annoncées sur cette page dès qu’elles seront confirmées.</p></details>
-        <details><summary>Quels formats seront proposés ?</summary><p>Une version papier et une version numérique sont envisagées. Les formats définitifs seront précisés prochainement.</p></details>
-        <details><summary>Pourrai-je obtenir un exemplaire dédicacé ?</summary><p>C’est une possibilité envisagée pour la version papier. Les informations pratiques seront partagées lorsque l’organisation sera définie.</p></details>
-      </div>
+    <section class="excerpt-section section" id="extraits">
+      <p class="eyebrow">QUELQUES MOTS AVANT LE LIVRE</p>
+      <h2>Entrer dans <em>l'histoire.</em></h2>
+      <p>Il y a des histoires que l'on garde longtemps enfermées. Puis un jour, on trouve la force de les regarder autrement.</p>
+      <p>Voici un aperçu de l'univers de <em>Danser avec le diable</em>. Les extraits complets seront partagés prochainement.</p>
+      <a class="text-link" href="#contact">SUIVRE L'ACTUALITÉ DU LIVRE ↗</a>
     </section>
-
-    <section class="contact-section" id="contact">
-      <div class="contact-glow"></div>
-      <div class="section-wrap contact-inner">
-        <div>
-          <p class="eyebrow">Restez informé</p>
-          <h2>La suite s’écrit bientôt.</h2>
-          <p>Les nouvelles du livre, la date de sortie et les coulisses du projet seront partagées ici.</p>
-        </div>
-        <a class="button button-cream" href="mailto:romain.danseravecle diable@outlook.com" onclick="this.href='mailto:romain.danseravecled iable@outlook.com'.replace(' ','')">Écrire à l’auteur <span aria-hidden="true">↗</span></a>
-      </div>
+    <section class="faq-section section" id="faq">
+      <p class="eyebrow">VOUS VOUS POSEZ DES QUESTIONS</p>
+      <h2>Quelques <em>réponses.</em></h2>
+      <details><summary>De quoi parle le livre ?</summary><p>D'un parcours autobiographique autour de l'addiction, du chemsex, des blessures personnelles et de la reconstruction.</p></details>
+      <details><summary>Quand sera-t-il disponible ?</summary><p>La date de sortie sera communiquée prochainement sur ce site.</p></details>
+      <details><summary>Le livre sera-t-il disponible en papier et en numérique ?</summary><p>Deux formats sont envisagés. Les détails seront précisés au moment de la sortie.</p></details>
+      <details><summary>Est-ce une histoire vraie ?</summary><p>Oui. Il s'agit d'un récit autobiographique raconté à la première personne.</p></details>
+    </section>
+    <section class="contact-section section" id="contact">
+      <p class="eyebrow">RESTONS EN CONTACT</p>
+      <h2>La suite s'écrit <em>bientôt.</em></h2>
+      <p>Merci de faire une place à cette histoire. Les prochaines nouvelles du livre seront partagées ici.</p>
+      <a class="button" href="mailto:contact@romainr.fr">ME CONTACTER <span>↗</span></a>
     </section>
   </main>
-
-  <footer class="site-footer" id="footer">
-    <a class="wordmark" href="#accueil">ROMAIN<span>.</span>R</a>
-    <p>Danser avec le diable — Ma valse entre addiction et chemsex.</p>
-    <p class="footer-small">© <span id="year"></span> Romain.R · Site en préparation</p>
+  <footer>
+    <a class="logo" href="#accueil">ROMAIN<span>.R</span></a>
+    <p>© 2026 Romain.R — <em>Danser avec le diable</em></p>
+    <a href="#accueil">RETOUR EN HAUT ↑</a>
   </footer>
   <script src="script.js"></script>
 </body>
