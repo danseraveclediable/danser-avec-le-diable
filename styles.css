@@ -14,7 +14,7 @@
 }
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 85px;
+  scroll-padding-top: 90px;
 }
 body {
   margin: 0;
@@ -32,32 +32,40 @@ a {
 button {
   font: inherit;
 }
+/* EN-TÊTE */
 .site-header {
   position: absolute;
-  z-index: 10;
+  z-index: 20;
   top: 0;
   left: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 30px;
   width: 100%;
-  min-height: 86px;
+  min-height: 88px;
   padding: 20px 7%;
-  border-bottom: 1px solid rgba(233, 223, 208, 0.13);
+  border-bottom: 1px solid var(--line);
 }
-.logo {
-  font-size: 16px;
+.logo,
+.wordmark {
+  flex-shrink: 0;
+  font-size: 15px;
   font-weight: 500;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.28em;
   white-space: nowrap;
 }
-.logo span {
+.logo span,
+.wordmark span {
   color: var(--red-light);
 }
+/* NAVIGATION GRAND ÉCRAN */
 .navigation {
   display: flex;
   align-items: center;
-  gap: 27px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 12px 24px;
 }
 .navigation a {
   font-size: 9px;
@@ -66,17 +74,20 @@ button {
   transition: color 0.25s ease;
 }
 .navigation a:hover,
-.text-link:hover {
+.navigation a.active {
   color: var(--red-light);
 }
+/* BOUTON DU MENU MOBILE */
 .menu-toggle {
   display: none;
+  flex-shrink: 0;
   padding: 9px 12px;
   color: var(--cream);
   background: transparent;
   border: 1px solid var(--line);
   cursor: pointer;
 }
+/* ACCUEIL */
 .hero {
   position: relative;
   display: flex;
@@ -84,50 +95,72 @@ button {
   min-height: 760px;
   min-height: 100svh;
   overflow: hidden;
+  isolation: isolate;
   background:
-    linear-gradient(90deg, #100d0c 0%, rgba(16, 13, 12, 0.92) 36%, rgba(16, 13, 12, 0.28) 100%),
-    linear-gradient(0deg, var(--black) 0%, transparent 22%, transparent 82%, rgba(16, 13, 12, 0.35) 100%),
+    linear-gradient(
+      90deg,
+      rgba(16, 13, 12, 0.98) 0%,
+      rgba(16, 13, 12, 0.88) 32%,
+      rgba(16, 13, 12, 0.38) 68%,
+      rgba(16, 13, 12, 0.2) 100%
+    ),
+    linear-gradient(
+      0deg,
+      var(--black) 0%,
+      transparent 22%,
+      transparent 82%,
+      rgba(16, 13, 12, 0.35) 100%
+    ),
     url("hero.jpg") center 35% / cover no-repeat;
 }
 .hero-overlay {
   position: absolute;
+  z-index: -1;
   inset: 0;
-  background: linear-gradient(0deg, var(--black) 0%, transparent 18%, transparent 80%, rgba(16, 13, 12, 0.25) 100%);
+  background: linear-gradient(
+    0deg,
+    var(--black) 0%,
+    transparent 18%,
+    transparent 85%,
+    rgba(16, 13, 12, 0.25) 100%
+  );
   pointer-events: none;
 }
 .hero-content {
   position: relative;
   z-index: 1;
-  width: min(690px, 78%);
-  padding: 140px 0 100px 10%;
+  width: min(760px, 76%);
+  padding: 150px 0 100px 10%;
 }
 .eyebrow {
   margin: 0 0 22px;
   color: var(--red-light);
   font-size: 10px;
   font-weight: 500;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.28em;
   line-height: 1.8;
 }
 .hero h1 {
+  max-width: 100%;
   margin: 0;
   font-family: var(--serif);
-  font-size: clamp(64px, 9vw, 118px);
+  font-size: clamp(58px, 7.2vw, 104px);
   font-weight: 400;
-  line-height: 0.86;
+  line-height: 0.9;
   letter-spacing: -0.045em;
+  overflow-wrap: normal;
 }
 .hero h1 span {
   color: var(--red-light);
 }
 .subtitle {
-  margin: 30px 0 18px;
+  margin: 28px 0 18px;
   font-size: 10px;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.18em;
   line-height: 1.9;
 }
 .intro {
-  max-width: 390px;
+  max-width: 430px;
   color: var(--muted);
   font-size: 12px;
   line-height: 2.1;
@@ -144,7 +177,7 @@ button {
   font-size: 9px;
   font-weight: 500;
   letter-spacing: 0.16em;
-  transition: background 0.25s ease, color 0.25s ease;
+  transition: background 0.25s ease;
 }
 .button:hover {
   background: var(--red);
@@ -162,6 +195,7 @@ button {
   letter-spacing: 0.22em;
   writing-mode: vertical-rl;
 }
+/* SECTIONS */
 .section {
   padding: 110px 10%;
 }
@@ -185,6 +219,7 @@ h2 em {
   color: var(--muted);
   font-size: 12px;
 }
+/* LIVRE ET COUVERTURE */
 .book-section {
   background: var(--black-soft);
 }
@@ -262,6 +297,7 @@ h2 em {
   color: var(--muted);
   font-size: 11px;
 }
+/* CITATION */
 .quote-section {
   padding: 100px 12%;
   background:
@@ -283,6 +319,7 @@ h2 em {
   margin: 35px auto 0;
   background: var(--red-light);
 }
+/* À PROPOS */
 .about-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -301,6 +338,7 @@ h2 em {
   font-size: 12px;
   line-height: 2.2;
 }
+/* EXTRAIT */
 .excerpt-section {
   background:
     linear-gradient(90deg, rgba(16, 13, 12, 0.98), rgba(16, 13, 12, 0.78)),
@@ -320,6 +358,10 @@ h2 em {
   letter-spacing: 0.15em;
   transition: color 0.25s ease;
 }
+.text-link:hover {
+  color: var(--red-light);
+}
+/* FAQ */
 .faq-section {
   max-width: 1000px;
   margin: 0 auto;
@@ -339,6 +381,7 @@ h2 em {
   font-size: 12px;
   line-height: 2;
 }
+/* CONTACT ET PIED DE PAGE */
 .contact-section {
   background: var(--black-soft);
   text-align: center;
@@ -366,17 +409,46 @@ footer > a:last-child {
   font-size: 8px;
   letter-spacing: 0.12em;
 }
-@media (min-width: 1200px) {
+/* ÉCRANS LARGES */
+@media (min-width: 1100px) {
+  .site-header {
+    padding-right: 6%;
+    padding-left: 6%;
+  }
   .hero-content {
-    padding-left: max(10%, calc((100% - 1050px) / 2));
+    width: min(780px, 68%);
+    padding-left: max(8%, calc((100% - 1100px) / 2));
+  }
+  .hero h1 {
+    font-size: clamp(72px, 6.5vw, 100px);
   }
 }
+/* TABLETTES ET TÉLÉPHONES */
+@media (max-width: 900px) {
+  .site-header {
+    gap: 16px;
+    padding-right: 5%;
+    padding-left: 5%;
+  }
+  .navigation {
+    gap: 10px 14px;
+  }
+  .navigation a {
+    font-size: 8px;
+  }
+  .hero-content {
+    width: 82%;
+    padding-left: 7%;
+  }
+}
+/* PETITS ÉCRANS : MENU HAMBURGER */
 @media (max-width: 760px) {
   .site-header {
     min-height: 76px;
     padding: 18px 6%;
   }
-  .logo {
+  .logo,
+  .wordmark {
     font-size: 14px;
   }
   .menu-toggle {
@@ -409,7 +481,12 @@ footer > a:last-child {
     min-height: 100svh;
     align-items: flex-end;
     background:
-      linear-gradient(0deg, #100d0c 0%, rgba(16, 13, 12, 0.82) 35%, rgba(16, 13, 12, 0.12) 100%),
+      linear-gradient(
+        0deg,
+        #100d0c 0%,
+        rgba(16, 13, 12, 0.82) 35%,
+        rgba(16, 13, 12, 0.12) 100%
+      ),
       url("hero.jpg") 58% center / cover no-repeat;
   }
   .hero-content {
@@ -417,7 +494,8 @@ footer > a:last-child {
     padding: 0 7% 90px;
   }
   .hero h1 {
-    font-size: clamp(58px, 15vw, 88px);
+    font-size: clamp(58px, 13.5vw, 88px);
+    line-height: 0.9;
   }
   .eyebrow {
     font-size: 9px;
@@ -474,6 +552,80 @@ footer > a:last-child {
   }
   footer p {
     margin: 0;
+  }
+}
+/* TÉLÉPHONE EN PAYSAGE */
+@media (max-width: 900px) and (orientation: landscape) {
+  .site-header {
+    position: absolute;
+    min-height: 66px;
+    padding: 12px 5%;
+  }
+  .logo,
+  .wordmark {
+    font-size: 12px;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .navigation {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    display: none;
+    align-items: stretch;
+    gap: 0;
+    padding: 8px 5% 14px;
+    background: #100d0c;
+    border-bottom: 1px solid var(--line);
+  }
+  .navigation.is-open {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .navigation a {
+    padding: 8px 10px;
+    font-size: 9px;
+  }
+  .hero {
+    min-height: 650px;
+    min-height: 100svh;
+    align-items: center;
+    background:
+      linear-gradient(
+        90deg,
+        rgba(16, 13, 12, 0.96) 0%,
+        rgba(16, 13, 12, 0.82) 38%,
+        rgba(16, 13, 12, 0.3) 100%
+      ),
+      linear-gradient(0deg, var(--black), transparent 25%),
+      url("hero.jpg") center 38% / cover no-repeat;
+  }
+  .hero-content {
+    width: 72%;
+    padding: 100px 0 45px 7%;
+  }
+  .hero h1 {
+    max-width: 100%;
+    font-size: clamp(48px, 7vw, 76px);
+    line-height: 0.88;
+  }
+  .hero .eyebrow {
+    margin-bottom: 12px;
+  }
+  .subtitle {
+    margin: 16px 0 10px;
+  }
+  .intro {
+    max-width: 420px;
+    font-size: 11px;
+    line-height: 1.8;
+  }
+  .button {
+    margin-top: 12px;
+    padding: 12px 16px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
