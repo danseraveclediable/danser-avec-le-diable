@@ -43,7 +43,7 @@ h1 em { font-style: normal; color: var(--red-light); display: block; }
 .button-outline { border-color: var(--cream-muted); color: var(--cream); margin-top: .5rem; }
 .button-outline:hover { background: rgba(255,255,255,.07); }
 .button-light { background: var(--cream); color: var(--black); }
-.hero-art { position: relative; align-self: stretch; min-height: 490px; margin: -2rem -5.5vw -4rem 0; background: linear-gradient(90deg, rgba(16,13,12,.35), transparent 30%), url("assets/couverture-livre.png") center 34% / cover no-repeat, radial-gradient(ellipse at 52% 35%, #7b4a35, #201512 68%); clip-path: polygon(8% 0, 100% 0, 100% 100%, 0 100%); }
+.hero-art { position: relative; align-self: stretch; min-height: 490px; margin: -2rem -5.5vw -4rem 0; background: linear-gradient(90deg, rgba(16,13,12,.35), transparent 30%), url("couverture-livre.png") center 34% / cover no-repeat, radial-gradient(ellipse at 52% 35%, #7b4a35, #201512 68%); clip-path: polygon(8% 0, 100% 0, 100% 100%, 0 100%); }
 .hero-art::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(16,13,12,.7), transparent 40%), linear-gradient(90deg, rgba(16,13,12,.35), transparent 50%); }
 .art-glow { position: absolute; inset: 12% 16% 10%; border: 1px solid rgba(241,229,212,.16); transform: rotate(-5deg); z-index: 1; }
 .art-copy { position: absolute; z-index: 2; right: 9%; top: 22%; font-family: var(--serif); font-style: italic; font-size: clamp(1.1rem, 2vw, 1.8rem); line-height: 1.1; color: var(--cream); transform: rotate(-7deg); text-shadow: 0 2px 15px #000; }
@@ -84,7 +84,7 @@ h2 em { color: var(--red-light); font-weight: 400; }
 .signature { font-family: var(--serif); font-style: italic; font-size: 2rem; margin: 2rem 0 0; }
 .signature span { color: var(--red-light); font-style: normal; padding-left: .5rem; }
 .excerpt-section { display: grid; grid-template-columns: 1fr 1fr; min-height: 450px; background: #211714; }
-.excerpt-image { background: linear-gradient(90deg, rgba(16,13,12,.1), rgba(16,13,12,.45)), url("assets/couverture-livre.png") center / cover no-repeat; min-height: 360px; filter: saturate(.55); }
+.excerpt-image { background: linear-gradient(90deg, rgba(16,13,12,.1), rgba(16,13,12,.45)), url("couverture-livre.png") center / cover no-repeat; min-height: 360px; filter: saturate(.55); }
 .excerpt-content { padding: 5rem clamp(2rem, 7vw, 7rem); align-self: center; }
 .excerpt-content blockquote { font-size: clamp(1.5rem, 2.5vw, 2.2rem); line-height: 1.2; margin: 1.5rem 0; color: var(--cream); }
 .newsletter-section { display: grid; grid-template-columns: 1fr .8fr; gap: 5rem; align-items: center; }
