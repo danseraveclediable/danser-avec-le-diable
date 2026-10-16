@@ -3,10 +3,10 @@
   --black: #100d0c;
   --black-soft: #171211;
   --cream: #e9dfd0;
-  --muted: #b6a99d;
+  --muted: #c9beb3;
   --red: #8c292d;
-  --red-light: #b34a4c;
-  --line: rgba(233, 223, 208, 0.18);
+  --red-light: #c15a5d;
+  --line: rgba(233, 223, 208, 0.2);
   --serif: "Cormorant Garamond", Georgia, serif;
   --sans: "Montserrat", Arial, sans-serif;
 }
@@ -25,9 +25,11 @@ body {
   background: var(--black);
   color: var(--cream);
   font-family: var(--sans);
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 1.9;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.85;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 a {
@@ -61,7 +63,7 @@ button {
   flex-shrink: 0;
   font-size: 15px;
   font-weight: 500;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.22em;
   white-space: nowrap;
 }
 
@@ -79,8 +81,9 @@ button {
 }
 
 .navigation a {
-  font-size: 9px;
-  letter-spacing: 0.12em;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
   transition: color 0.25s ease;
 }
@@ -152,9 +155,9 @@ button {
 .eyebrow {
   margin: 0 0 22px;
   color: var(--red-light);
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.28em;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.17em;
   line-height: 1.8;
 }
 
@@ -175,16 +178,19 @@ button {
 
 .subtitle {
   margin: 28px 0 18px;
-  font-size: 10px;
-  letter-spacing: 0.18em;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.11em;
   line-height: 1.9;
 }
 
 .intro {
-  max-width: 430px;
+  max-width: 460px;
   color: var(--muted);
-  font-size: 12px;
-  line-height: 2.1;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.95;
+  letter-spacing: 0;
 }
 
 .button {
@@ -196,9 +202,9 @@ button {
   padding: 15px 20px;
   border: 1px solid var(--red-light);
   color: var(--cream);
-  font-size: 9px;
-  font-weight: 500;
-  letter-spacing: 0.16em;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
   transition: background 0.25s ease;
 }
 
@@ -216,8 +222,9 @@ button {
   right: 28px;
   bottom: 110px;
   color: var(--muted);
-  font-size: 8px;
-  letter-spacing: 0.22em;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
   writing-mode: vertical-rl;
 }
 
@@ -248,7 +255,9 @@ h2 em {
 
 .section-heading > p:last-child {
   color: var(--muted);
-  font-size: 12px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.9;
 }
 
 /* LIVRE ET COUVERTURE */
@@ -276,7 +285,7 @@ h2 em {
   position: absolute;
   z-index: 0;
   inset: 12px -12px -12px 12px;
-  border: 1px solid rgba(179, 74, 76, 0.5);
+  border: 1px solid rgba(193, 90, 93, 0.5);
   content: "";
 }
 
@@ -300,15 +309,19 @@ h2 em {
 .book-subtitle {
   margin: 20px 0;
   color: var(--red-light);
-  font-size: 10px;
-  letter-spacing: 0.16em;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  line-height: 1.8;
   text-transform: uppercase;
 }
 
 .book-copy > p:not(.eyebrow):not(.book-subtitle) {
   color: var(--muted);
-  font-size: 12px;
-  line-height: 2.1;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.95;
+  letter-spacing: 0;
 }
 
 .format {
@@ -332,15 +345,16 @@ h2 em {
 }
 
 .format strong {
-  font-size: 9px;
-  font-weight: 500;
-  letter-spacing: 0.15em;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
 }
 
 .format small {
   margin-top: 4px;
   color: var(--muted);
-  font-size: 11px;
+  font-size: 13px;
+  font-weight: 400;
 }
 
 /* CITATION */
@@ -389,8 +403,10 @@ h2 em {
 .about-copy p {
   margin-top: 0;
   color: var(--muted);
-  font-size: 12px;
-  line-height: 2.2;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 2;
+  letter-spacing: 0;
 }
 
 /* EXTRAITS */
@@ -402,9 +418,12 @@ h2 em {
 }
 
 .excerpt-section > p:not(.eyebrow) {
-  max-width: 600px;
+  max-width: 650px;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 2;
+  letter-spacing: 0;
 }
 
 .text-link {
@@ -412,8 +431,9 @@ h2 em {
   margin-top: 24px;
   padding-bottom: 7px;
   border-bottom: 1px solid var(--red-light);
-  font-size: 9px;
-  letter-spacing: 0.15em;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
   transition: color 0.25s ease;
 }
 
@@ -437,13 +457,16 @@ h2 em {
   cursor: pointer;
   font-family: var(--serif);
   font-size: 25px;
+  line-height: 1.45;
 }
 
 .faq-section details p {
   max-width: 700px;
   color: var(--muted);
-  font-size: 12px;
+  font-size: 15px;
+  font-weight: 400;
   line-height: 2;
+  letter-spacing: 0;
 }
 
 /* CONTACT ET PIED DE PAGE */
@@ -454,10 +477,12 @@ h2 em {
 }
 
 .contact-section > p:not(.eyebrow) {
-  max-width: 510px;
+  max-width: 550px;
   margin: 0 auto;
   color: var(--muted);
-  font-size: 12px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 2;
 }
 
 footer {
@@ -471,13 +496,16 @@ footer {
 
 footer p {
   color: var(--muted);
-  font-size: 10px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.7;
   text-align: center;
 }
 
 footer > a:last-child {
-  font-size: 8px;
-  letter-spacing: 0.12em;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
 }
 
 /* GRANDS ÉCRANS */
@@ -496,6 +524,20 @@ footer > a:last-child {
   .hero h1 {
     font-size: clamp(72px, 6.5vw, 100px);
   }
+
+  .intro {
+    max-width: 500px;
+    font-size: 16px;
+  }
+
+  .section-heading > p:last-child,
+  .book-copy > p:not(.eyebrow):not(.book-subtitle),
+  .about-copy p,
+  .excerpt-section > p:not(.eyebrow),
+  .faq-section details p,
+  .contact-section > p:not(.eyebrow) {
+    font-size: 16px;
+  }
 }
 
 /* TABLETTES */
@@ -512,7 +554,7 @@ footer > a:last-child {
   }
 
   .navigation a {
-    font-size: 8px;
+    font-size: 10px;
   }
 
   .hero-content {
@@ -561,7 +603,7 @@ footer > a:last-child {
   .navigation a {
     padding: 12px 0;
     border-bottom: 1px solid var(--line);
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .hero {
@@ -589,17 +631,23 @@ footer > a:last-child {
   }
 
   .eyebrow {
-    font-size: 9px;
-    letter-spacing: 0.23em;
+    font-size: 11px;
+    letter-spacing: 0.15em;
   }
 
   .subtitle {
-    max-width: 310px;
-    font-size: 9px;
+    max-width: 340px;
+    font-size: 11px;
+    letter-spacing: 0.08em;
   }
 
   .intro {
-    max-width: 340px;
+    max-width: 370px;
+    font-size: 14px;
+    line-height: 1.9;
+  }
+
+  .button {
     font-size: 11px;
   }
 
@@ -615,6 +663,10 @@ footer > a:last-child {
     margin-bottom: 45px;
   }
 
+  .section-heading > p:last-child {
+    font-size: 14px;
+  }
+
   .book-layout {
     grid-template-columns: 1fr;
     gap: 55px;
@@ -627,6 +679,23 @@ footer > a:last-child {
 
   .book-copy h3 {
     font-size: 60px;
+  }
+
+  .book-copy > p:not(.eyebrow):not(.book-subtitle),
+  .about-copy p,
+  .excerpt-section > p:not(.eyebrow),
+  .faq-section details p,
+  .contact-section > p:not(.eyebrow) {
+    font-size: 14px;
+    line-height: 1.9;
+  }
+
+  .book-subtitle {
+    font-size: 11px;
+  }
+
+  .format small {
+    font-size: 12px;
   }
 
   .quote-section {
@@ -658,6 +727,7 @@ footer > a:last-child {
 
   footer p {
     margin: 0;
+    font-size: 11px;
   }
 }
 
@@ -706,7 +776,7 @@ footer > a:last-child {
   .navigation a {
     padding: 8px 0;
     border-bottom: 1px solid var(--line);
-    font-size: 9px;
+    font-size: 11px;
   }
 
   .navigation a:last-child {
@@ -735,8 +805,8 @@ footer > a:last-child {
 
   .hero .eyebrow {
     margin-bottom: 10px;
-    font-size: 9px;
-    letter-spacing: 0.2em;
+    font-size: 10px;
+    letter-spacing: 0.14em;
   }
 
   .hero h1 {
@@ -748,14 +818,14 @@ footer > a:last-child {
 
   .subtitle {
     margin: 14px 0 8px;
-    font-size: 9px;
-    letter-spacing: 0.14em;
+    font-size: 10px;
+    letter-spacing: 0.09em;
   }
 
   .intro {
-    max-width: 400px;
-    font-size: 10px;
-    line-height: 1.7;
+    max-width: 440px;
+    font-size: 12px;
+    line-height: 1.75;
   }
 
   .button {
@@ -768,7 +838,7 @@ footer > a:last-child {
   }
 }
 
-/* ÉCRANS BAS EN PAYSAGE, Y COMPRIS IPHONE */
+/* ÉCRANS BAS EN PAYSAGE */
 
 @media (orientation: landscape) and (max-height: 500px) {
   .site-header {
@@ -801,9 +871,9 @@ footer > a:last-child {
   }
 
   .intro {
-    max-width: 360px;
-    font-size: 10px;
-    line-height: 1.55;
+    max-width: 400px;
+    font-size: 12px;
+    line-height: 1.6;
   }
 
   .button {
@@ -824,3 +894,4 @@ footer > a:last-child {
     transition-duration: 0.01ms !important;
   }
 }
+
