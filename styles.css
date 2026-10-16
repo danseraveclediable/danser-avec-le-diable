@@ -85,15 +85,14 @@ button {
   min-height: 100svh;
   overflow: hidden;
   background:
-    radial-gradient(ellipse at 78% 48%, rgba(115, 46, 42, 0.2), transparent 40%),
-    linear-gradient(90deg, #100d0c 0%, rgba(16, 13, 12, 0.94) 40%, rgba(16, 13, 12, 0.45) 100%),
-    url("images/hero.jpg") center 35% / cover no-repeat,
-    #100d0c;
+    linear-gradient(90deg, #100d0c 0%, rgba(16, 13, 12, 0.92) 36%, rgba(16, 13, 12, 0.28) 100%),
+    linear-gradient(0deg, var(--black) 0%, transparent 22%, transparent 82%, rgba(16, 13, 12, 0.35) 100%),
+    url("hero.jpg") center 35% / cover no-repeat;
 }
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(0deg, var(--black) 0%, transparent 18%, transparent 80%, rgba(16, 13, 12, 0.4) 100%);
+  background: linear-gradient(0deg, var(--black) 0%, transparent 18%, transparent 80%, rgba(16, 13, 12, 0.25) 100%);
   pointer-events: none;
 }
 .hero-content {
@@ -178,9 +177,7 @@ h2 {
   font-weight: 400;
   line-height: 1.05;
 }
-h2 em,
-.book-copy h3,
-.quote-section blockquote em {
+h2 em {
   color: var(--red-light);
   font-weight: 400;
 }
@@ -307,7 +304,6 @@ h2 em,
 .excerpt-section {
   background:
     linear-gradient(90deg, rgba(16, 13, 12, 0.98), rgba(16, 13, 12, 0.78)),
-    url("images/extrait.jpg") center / cover no-repeat,
     #171211;
 }
 .excerpt-section > p:not(.eyebrow) {
@@ -413,9 +409,8 @@ footer > a:last-child {
     min-height: 100svh;
     align-items: flex-end;
     background:
-      linear-gradient(0deg, #100d0c 0%, rgba(16, 13, 12, 0.86) 35%, rgba(16, 13, 12, 0.12) 100%),
-      url("images/hero.jpg") 58% center / cover no-repeat,
-      #100d0c;
+      linear-gradient(0deg, #100d0c 0%, rgba(16, 13, 12, 0.82) 35%, rgba(16, 13, 12, 0.12) 100%),
+      url("hero.jpg") 58% center / cover no-repeat;
   }
   .hero-content {
     width: 100%;
