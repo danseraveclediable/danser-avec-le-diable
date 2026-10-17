@@ -16,86 +16,136 @@
   <link rel="stylesheet" href="fragments.css">
 
   <style>
-    /* Illustrations d'accueil */
-    .home-illustration {
-      width: min(100%, 700px);
-      margin: 35px auto;
-      text-align: center;
-    }
-
-    .home-illustration img {
+    /* Illustrations cliquables de la page d'accueil */
+    .home-image-link {
       display: block;
       width: 100%;
-      height: auto;
-      margin: 0 auto;
-    }
-
-    .home-illustration a {
-      display: block;
-    }
-
-    .author-illustration {
-      width: min(100%, 850px);
-      margin: 35px auto;
-    }
-
-    .author-illustration img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
-    .faq-illustration {
-      width: min(100%, 700px);
-      margin: 35px auto;
-    }
-
-    .faq-illustration img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
-    .shop-preview {
-      position: relative;
-      padding: 85px 7%;
+      text-decoration: none;
+      line-height: 0;
       overflow: hidden;
-      text-align: center;
+      border: 1px solid rgba(179, 74, 67, 0.38);
+      background: #100d0c;
+      transition: border-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .home-image-link:hover {
+      border-color: rgba(210, 105, 85, 0.9);
+      transform: translateY(-3px);
+    }
+
+    .home-image-link img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 0;
+    }
+
+    /* Grande illustration des extraits */
+    .excerpts-preview {
+      width: min(1050px, 86%);
+      margin: 45px auto;
+    }
+
+    /* Cartes auteur et FAQ côte à côte */
+    .home-cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(18px, 4vw, 42px);
+      width: min(1050px, 86%);
+      margin: 75px auto;
+      align-items: start;
+    }
+
+    .home-card {
+      min-width: 0;
+    }
+
+    .home-card .home-image-link img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    /* Boutique avec couverture du livre */
+    .shop-preview {
+      padding: 75px 7%;
       background:
         radial-gradient(
           ellipse at 50% 50%,
           rgba(142, 41, 37, 0.16),
-          transparent 65%
+          transparent 68%
         ),
         #100d0c;
     }
 
-    .shop-preview-content {
-      width: min(750px, 100%);
+    .shop-preview-inner {
+      width: min(1000px, 100%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+      align-items: center;
+      gap: clamp(30px, 6vw, 75px);
+    }
+
+    .shop-book {
+      width: 100%;
+      max-width: 310px;
       margin: 0 auto;
     }
 
-    .shop-preview p:not(.eyebrow) {
-      max-width: 650px;
-      margin: 20px auto 30px;
-      line-height: 1.9;
+    .shop-book img {
+      display: block;
+      width: 100%;
+      height: auto;
+      filter: drop-shadow(0 18px 25px rgba(0, 0, 0, 0.4));
     }
 
-    .shop-preview .eyebrow {
+    .shop-copy {
+      min-width: 0;
+    }
+
+    .shop-copy h2 {
+      margin-top: 12px;
+    }
+
+    .shop-copy p:not(.eyebrow) {
+      line-height: 1.9;
+      margin: 20px 0 28px;
+    }
+
+    .shop-copy .eyebrow {
       color: #c17b65;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.16em;
     }
 
     @media (max-width: 700px) {
-      .home-illustration,
-      .author-illustration,
-      .faq-illustration {
-        width: 100%;
-        margin: 25px auto;
+      .excerpts-preview {
+        width: 90%;
+        margin: 30px auto;
+      }
+
+      .home-cards {
+        width: 90%;
+        gap: 14px;
+        margin: 45px auto;
       }
 
       .shop-preview {
-        padding: 65px 6%;
+        padding: 55px 6%;
+      }
+
+      .shop-preview-inner {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+      }
+
+      .shop-book {
+        max-width: 220px;
+      }
+
+      .shop-copy .button {
+        display: inline-block;
       }
     }
   </style>
@@ -154,16 +204,12 @@
       </span>
     </section>
 
-    <!-- LE LIVRE -->
+    <!-- PRÉSENTATION DU LIVRE -->
     <section class="book-section section" id="livre">
       <div class="section-heading">
         <p class="eyebrow">AU CŒUR DU RÉCIT</p>
-
         <h2>Un livre. <em>Une vérité.</em></h2>
-
-        <p>
-          Mettre des mots sur l'indicible. Regarder les ombres en face.
-        </p>
+        <p>Mettre des mots sur l'indicible. Regarder les ombres en face.</p>
       </div>
 
       <div class="book-layout">
@@ -176,12 +222,8 @@
 
         <div class="book-copy">
           <p class="eyebrow">LE TÉMOIGNAGE</p>
-
           <h3>Danser avec<br>le diable</h3>
-
-          <p class="book-subtitle">
-            Ma valse entre addiction et chemsex
-          </p>
+          <p class="book-subtitle">Ma valse entre addiction et chemsex</p>
 
           <p>
             À travers ce récit autobiographique, je raconte les blessures,
@@ -219,74 +261,31 @@
       </div>
     </section>
 
-    <!-- LES FRAGMENTS ET LES EXTRAITS -->
+    <!-- EXTRAITS : UNE IMAGE CLIQUABLE, SANS TEXTE AUTOUR -->
     <section class="fragments-section" id="extraits">
       <div class="fragments-container">
-
         <div class="fragments-heading">
           <p class="eyebrow">DES MOTS ÉCHAPPÉS DE L'OMBRE</p>
-
           <h2>Les fragments <em>du diable.</em></h2>
-
           <p>
             Quelques morceaux de mon histoire.
             Des mots extraits du manuscrit, entre ombre et lumière.
           </p>
         </div>
 
-        <!-- Illustration des extraits : remplace l'ancienne scène d'Hadès -->
-        <div class="home-illustration">
-          <a href="extraits.html" aria-label="Découvrir les extraits du livre">
+        <div class="excerpts-preview">
+          <a
+            class="home-image-link"
+            href="extraits.html"
+            aria-label="Découvrir les extraits du livre"
+          >
             <img
-              src="extrait-accueil.png"
-              alt="Illustration des extraits de Danser avec le diable"
+              src="extraits-accueil.png"
+              alt="Découvrir les extraits de Danser avec le diable"
               loading="lazy"
             >
           </a>
         </div>
-
-        <div class="fragments-cards">
-
-          <article class="fragment-card">
-            <span class="fragment-label">Le fragment permanent</span>
-
-            <blockquote>
-              « Mon diable n’avait pas de visage.
-              Il savait simplement attendre. »
-            </blockquote>
-
-            <p class="fragment-note">
-              Certains mots restent. Celui-ci ne disparaîtra pas.
-            </p>
-          </article>
-
-          <article class="fragment-card">
-            <span class="fragment-label">Le fragment de la semaine</span>
-
-            <blockquote>
-              « Je ne savais pas encore que certaines choses qui nous
-              donnent l’impression de voler peuvent aussi nous apprendre
-              à tomber. »
-            </blockquote>
-
-            <p class="fragment-note">
-              Un passage du manuscrit, renouvelé au fil des semaines.
-            </p>
-          </article>
-
-        </div>
-
-        <div class="fragments-heading">
-          <p class="fragment-note">
-            Chaque fragment est une trace de cette histoire.
-            D'autres mots trouveront leur place ici, au fil du temps.
-          </p>
-
-          <a class="button" href="extraits.html">
-            LIRE LES EXTRAITS <span>↗</span>
-          </a>
-        </div>
-
       </div>
     </section>
 
@@ -302,46 +301,38 @@
       <span class="quote-line"></span>
     </section>
 
-    <!-- PRÉSENTATION DE L'AUTEUR : ILLUSTRATION SEULE -->
-    <section class="about-section section" id="a-propos">
-      <div class="author-illustration">
-        <a href="auteur.html" aria-label="Découvrir la page de l'auteur">
+    <!-- AUTEUR ET FAQ : DEUX IMAGES CÔTE À CÔTE -->
+    <section class="home-cards" aria-label="Découvrir le site">
+      <div class="home-card">
+        <a
+          class="home-image-link"
+          href="auteur.html"
+          aria-label="En savoir plus sur l'auteur"
+        >
           <img
             src="auteur-accueil.png"
-            alt="Illustration de présentation de l'auteur"
+            alt="En savoir plus sur l'auteur"
             loading="lazy"
           >
         </a>
       </div>
-    </section>
 
-    <!-- FAQ : ILLUSTRATION ET ACCÈS À LA PAGE DÉDIÉE -->
-    <section class="faq-section section" id="faq">
-      <p class="eyebrow">VOUS VOUS POSEZ DES QUESTIONS</p>
-
-      <h2>Quelques <em>réponses.</em></h2>
-
-      <div class="faq-illustration">
-        <a href="faq.html" aria-label="Accéder à la foire aux questions">
+      <div class="home-card">
+        <a
+          class="home-image-link"
+          href="faq.html"
+          aria-label="Consulter la foire aux questions"
+        >
           <img
-            src="FAQ%20illustration.png"
-            alt="Illustration de la foire aux questions"
+            src="FAQ-accueil.png"
+            alt="Foire aux questions"
             loading="lazy"
           >
         </a>
       </div>
-
-      <p>
-        Des questions sur le livre, son histoire ou sa publication ?
-        Retrouvez les réponses sur la page dédiée.
-      </p>
-
-      <a class="button" href="faq.html">
-        CONSULTER LA FAQ <span>↗</span>
-      </a>
     </section>
 
-    <!-- RESSOURCES ET ACCOMPAGNEMENT -->
+    <!-- RESSOURCES : CONSERVÉES -->
     <section
       class="faq-section section support-section"
       id="appel-ressources"
@@ -363,25 +354,39 @@
       </a>
     </section>
 
-    <!-- BOUTIQUE -->
+    <!-- BOUTIQUE : COUVERTURE DU LIVRE ET MESSAGE -->
     <section class="shop-preview" id="boutique">
-      <div class="shop-preview-content">
-        <p class="eyebrow">PROLONGER L'UNIVERS DU LIVRE</p>
-
-        <h2>Un peu de cet univers <em>avec vous.</em></h2>
-
-        <p>
-          Le livre ouvre la voie. Son univers se prolongera aussi
-          à travers des marque-pages, des illustrations et quelques
-          objets imaginés au fil du projet.
-
-          Pour le moment, la boutique se prépare doucement,
-          comme le livre lui-même.
-        </p>
-
-        <a class="button" href="boutique.html">
-          DÉCOUVRIR LA BOUTIQUE <span>↗</span>
+      <div class="shop-preview-inner">
+        <a
+          class="shop-book"
+          href="boutique.html"
+          aria-label="Découvrir la boutique"
+        >
+          <img
+            src="couverture-livre.png"
+            alt="Danser avec le diable — couverture du livre"
+            loading="lazy"
+          >
         </a>
+
+        <div class="shop-copy">
+          <p class="eyebrow">PROLONGER L'UNIVERS DU LIVRE</p>
+
+          <h2>Un peu de cet univers <em>avec vous.</em></h2>
+
+          <p>
+            Le livre ouvre la voie. Son univers se prolongera aussi
+            à travers des marque-pages, des illustrations et quelques
+            objets imaginés au fil du projet.
+
+            Pour le moment, la boutique se prépare doucement,
+            comme le livre lui-même.
+          </p>
+
+          <a class="button" href="boutique.html">
+            DÉCOUVRIR LA BOUTIQUE <span>↗</span>
+          </a>
+        </div>
       </div>
     </section>
 
