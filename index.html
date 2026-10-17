@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -14,6 +14,48 @@
 
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="fragments.css">
+
+  <style>
+    /* Illustrations cliquables de la page d'accueil */
+    .home-image-link {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      margin: 0 auto;
+      text-decoration: none;
+      line-height: 0;
+      border: 1px solid rgba(180, 75, 75, 0.5);
+      transition: border-color 0.3s ease, opacity 0.3s ease;
+    }
+
+    .home-image-link:hover,
+    .home-image-link:focus-visible {
+      border-color: rgba(220, 115, 100, 0.95);
+      opacity: 0.94;
+    }
+
+    .home-image-link img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .home-image-section {
+      padding: 70px 4%;
+    }
+
+    .home-image-container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 600px) {
+      .home-image-section {
+        padding: 45px 4%;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -29,13 +71,14 @@
       <a href="livre.html">Le livre</a>
       <a href="#a-propos">À propos</a>
       <a href="#extraits">Extraits</a>
-      <a href="#faq">FAQ</a>
+      <a href="#faq-visuel">FAQ</a>
       <a href="ressources.html">Ressources</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <main>
+    <!-- ACCUEIL -->
     <section class="hero" id="accueil">
       <div class="hero-overlay"></div>
 
@@ -60,6 +103,7 @@
       <span class="vertical-note">UNE HISTOIRE VÉCUE · UNE VOIX LIBRE</span>
     </section>
 
+    <!-- PRÉSENTATION DU LIVRE -->
     <section class="book-section section" id="livre">
       <div class="section-heading">
         <p class="eyebrow">AU CŒUR DU RÉCIT</p>
@@ -120,28 +164,24 @@
       </div>
     </section>
 
-    <!-- LES FRAGMENTS DU DIABLE -->
-    <section class="fragments-section" id="extraits">
-      <div class="fragments-container">
-
+    <!-- ACCÈS AUX EXTRAITS : IMAGE SEULE -->
+    <section class="fragments-section home-image-section" id="extraits">
+      <div class="fragments-container home-image-container">
         <a
-          class="extraits-accueil-link"
+          class="home-image-link"
           href="extraits.html"
           aria-label="Découvrir les extraits de Danser avec le diable"
-          style="display: block; width: 100%; text-decoration: none;"
         >
           <img
             src="extraits-accueil.png"
-            alt="Un chat noir suit un fil rouge dans une ruelle sombre. Une invitation à découvrir les extraits du livre Danser avec le diable."
+            alt="Un chat noir suit un fil rouge dans une ruelle sombre, invitation à découvrir les extraits du livre."
             loading="lazy"
-            style="display: block; width: 100%; height: auto; border: 1px solid rgba(180, 75, 75, 0.5);"
           >
         </a>
-
       </div>
     </section>
-    <!-- FIN DES FRAGMENTS DU DIABLE -->
 
+    <!-- CITATION -->
     <section class="quote-section">
       <p class="eyebrow">ENTRE LES OMBRES ET LA LUMIÈRE</p>
 
@@ -153,6 +193,7 @@
       <span class="quote-line"></span>
     </section>
 
+    <!-- À PROPOS -->
     <section class="about-section section" id="a-propos">
       <p class="eyebrow">DERRIÈRE LES MOTS</p>
 
@@ -178,6 +219,24 @@
       </div>
     </section>
 
+    <!-- ACCÈS À LA FAQ : IMAGE SEULE -->
+    <section class="home-image-section" id="faq-visuel">
+      <div class="home-image-container">
+        <a
+          class="home-image-link"
+          href="faq.html"
+          aria-label="Accéder à la foire aux questions"
+        >
+          <img
+            src="faq-accueil.png"
+            alt="Un livre ancien marqué FAQ, des pages couvertes de points d'interrogation et un fil rouge dans une atmosphère sombre et cuivrée."
+            loading="lazy"
+          >
+        </a>
+      </div>
+    </section>
+
+    <!-- QUESTIONS FRÉQUENTES -->
     <section class="faq-section section" id="faq">
       <p class="eyebrow">VOUS VOUS POSEZ DES QUESTIONS</p>
 
@@ -217,7 +276,7 @@
       </details>
     </section>
 
-    <!-- ACCÈS AUX RESSOURCES D'AIDE ET DE PRÉVENTION -->
+    <!-- RESSOURCES D'AIDE ET DE PRÉVENTION -->
     <section class="faq-section section support-section" id="appel-ressources">
       <p class="eyebrow">ÉCOUTE · SOUTIEN · ACCOMPAGNEMENT</p>
 
@@ -233,8 +292,8 @@
         DÉCOUVRIR LES RESSOURCES <span>↗</span>
       </a>
     </section>
-    <!-- FIN DE L'ACCÈS AUX RESSOURCES -->
 
+    <!-- CONTACT -->
     <section class="contact-section section" id="contact">
       <p class="eyebrow">RESTONS EN CONTACT</p>
 
