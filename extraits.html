@@ -1,0 +1,412 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Découvrez quelques fragments de Danser avec le diable — Ma valse entre addiction et chemsex, le récit autobiographique de Romain.R.">
+
+  <meta name="theme-color" content="#100d0c">
+
+  <title>Les extraits — Danser avec le diable | Romain.R</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="fragments.css">
+
+  <style>
+    /* INTRODUCTION */
+
+    .extract-hero {
+      position: relative;
+      min-height: 65vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 78% 40%, rgba(142, 41, 37, .23), transparent 48%),
+        #100d0c;
+    }
+
+    .extract-hero::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 15%;
+      width: 2px;
+      height: 70%;
+      background: linear-gradient(
+        to bottom,
+        transparent,
+        #8e2925,
+        transparent
+      );
+    }
+
+    .extract-hero-content {
+      position: relative;
+      z-index: 1;
+      width: min(850px, 84%);
+      margin-left: 10%;
+      padding: 90px 0;
+    }
+
+    .extract-hero h1 {
+      margin: 20px 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(3.5rem, 8vw, 6.5rem);
+      font-weight: 500;
+      line-height: .95;
+    }
+
+    .extract-hero h1 em {
+      color: #b34a43;
+      font-weight: 400;
+    }
+
+    .extract-hero .intro {
+      max-width: 650px;
+      margin: 28px 0 0;
+      color: rgba(255, 255, 255, .76);
+      font-size: .98rem;
+      line-height: 1.9;
+    }
+
+    /* INTRODUCTION AUX FRAGMENTS */
+
+    .extract-intro {
+      padding: 85px 7%;
+      background: #14100f;
+    }
+
+    .extract-intro-inner {
+      width: min(800px, 100%);
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .extract-intro h2 {
+      margin: 18px 0 25px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 500;
+      line-height: 1.1;
+    }
+
+    .extract-intro h2 em {
+      color: #b34a43;
+      font-weight: 400;
+    }
+
+    .extract-intro p:not(.eyebrow) {
+      color: rgba(255, 255, 255, .75);
+      font-size: .96rem;
+      line-height: 1.95;
+    }
+
+    /* FRAGMENTS LITTÉRAIRES */
+
+    .extract-list {
+      padding: 90px 7%;
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(116, 35, 29, .13), transparent 55%),
+        #100d0c;
+    }
+
+    .extract-list-inner {
+      width: min(900px, 100%);
+      margin: 0 auto;
+    }
+
+    .extract-card {
+      position: relative;
+      margin-bottom: 35px;
+      padding: clamp(28px, 5vw, 55px);
+      border: 1px solid rgba(179, 74, 67, .28);
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, .025), transparent 55%),
+        rgba(0, 0, 0, .16);
+    }
+
+    .extract-card:last-child {
+      margin-bottom: 0;
+    }
+
+    .extract-card::before {
+      content: "“";
+      position: absolute;
+      top: 8px;
+      right: 24px;
+      color: rgba(179, 74, 67, .24);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 7rem;
+      line-height: 1;
+    }
+
+    .extract-number {
+      display: block;
+      margin-bottom: 22px;
+      color: #b34a43;
+      font-family: "Montserrat", sans-serif;
+      font-size: .68rem;
+      font-weight: 600;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+
+    .extract-card blockquote {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      color: #f0e4de;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.65rem, 4vw, 2.5rem);
+      font-weight: 400;
+      line-height: 1.45;
+    }
+
+    .extract-card p {
+      margin: 24px 0 0;
+      color: rgba(255, 255, 255, .55);
+      font-size: .76rem;
+      line-height: 1.8;
+    }
+
+    .extract-divider {
+      width: 55px;
+      height: 1px;
+      margin-top: 25px;
+      background: #8e2925;
+    }
+
+    /* APPEL À DÉCOUVRIR LE LIVRE */
+
+    .extract-cta {
+      padding: 100px 7%;
+      text-align: center;
+      background:
+        radial-gradient(ellipse at 50% 100%, rgba(116, 35, 29, .18), transparent 60%),
+        #14100f;
+    }
+
+    .extract-cta-inner {
+      width: min(750px, 100%);
+      margin: 0 auto;
+    }
+
+    .extract-cta h2 {
+      margin: 20px 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 500;
+      line-height: 1.08;
+    }
+
+    .extract-cta h2 em {
+      color: #b34a43;
+      font-weight: 400;
+    }
+
+    .extract-cta p:not(.eyebrow) {
+      margin: 0 auto 30px;
+      color: rgba(255, 255, 255, .74);
+      font-size: .95rem;
+      line-height: 1.9;
+    }
+
+    @media (max-width: 700px) {
+      .extract-hero {
+        min-height: auto;
+      }
+
+      .extract-hero-content {
+        width: 84%;
+        margin-left: 8%;
+        padding: 85px 0;
+      }
+
+      .extract-hero h1 {
+        font-size: clamp(3.3rem, 14vw, 4.8rem);
+      }
+
+      .extract-intro,
+      .extract-list {
+        padding: 70px 7%;
+      }
+
+      .extract-card {
+        margin-bottom: 24px;
+      }
+
+      .extract-cta {
+        padding: 75px 8%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <header class="site-header">
+    <a class="logo" href="index.html">ROMAIN<span>.R</span></a>
+
+    <button
+      class="menu-toggle"
+      aria-label="Ouvrir le menu"
+      aria-expanded="false"
+      aria-controls="navigation"
+      type="button"
+    >☰</button>
+
+    <nav class="navigation" id="navigation">
+      <a href="index.html">Accueil</a>
+      <a href="livre.html">Le livre</a>
+      <a href="auteur.html">L'auteur</a>
+      <a href="extraits.html" aria-current="page">Extraits</a>
+      <a href="ressources.html">Ressources</a>
+      <a href="faq.html">FAQ</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="extract-hero">
+      <div class="extract-hero-content">
+        <p class="eyebrow">DES MOTS ÉCHAPPÉS DE L'OMBRE</p>
+
+        <h1>Les fragments<br><em>du diable.</em></h1>
+
+        <p class="intro">
+          Certaines histoires ne se racontent pas d'un seul souffle.
+          Elles se dévoilent par fragments, au fil des souvenirs,
+          des silences et des mots que l'on finit par trouver.
+        </p>
+      </div>
+    </section>
+
+    <!-- INTRODUCTION -->
+
+    <section class="extract-intro">
+      <div class="extract-intro-inner">
+        <p class="eyebrow">AU FIL DES PAGES</p>
+
+        <h2>Quelques mots.<br><em>Une histoire entière.</em></h2>
+
+        <p>
+          <em>Danser avec le diable</em> est un récit personnel.
+          Ces fragments donnent un aperçu de son atmosphère, de ses
+          questionnements et de ce qui se joue derrière les apparences.
+        </p>
+
+        <p>
+          Ils ne racontent pas toute l'histoire. Ils en ouvrent simplement
+          quelques portes, sans remplacer la lecture du manuscrit.
+        </p>
+      </div>
+    </section>
+
+    <!-- FRAGMENTS -->
+
+    <section class="extract-list">
+      <div class="extract-list-inner">
+
+        <article class="extract-card">
+          <span class="extract-number">Fragment 01 — L'ombre</span>
+
+          <blockquote>
+            Mon diable n’avait pas de visage.
+            Il savait simplement attendre.
+          </blockquote>
+
+          <div class="extract-divider"></div>
+
+          <p>Un fragment autour de ce qui demeure dans l'ombre.</p>
+        </article>
+
+        <article class="extract-card">
+          <span class="extract-number">Fragment 02 — Le vertige</span>
+
+          <blockquote>
+            Je ne savais pas encore que certaines choses qui nous donnent
+            l’impression de voler peuvent aussi nous apprendre à tomber.
+          </blockquote>
+
+          <div class="extract-divider"></div>
+
+          <p>Un fragment autour des excès et de leurs contradictions.</p>
+        </article>
+
+        <article class="extract-card">
+          <span class="extract-number">Fragment 03 — Les mots</span>
+
+          <blockquote>
+            Écrire, c'était essayer de mettre de l'ordre dans ce qui
+            ne l'avait jamais vraiment été.
+          </blockquote>
+
+          <div class="extract-divider"></div>
+
+          <p>Un fragment autour de l'écriture et de la reconstruction.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- DÉCOUVRIR LE LIVRE -->
+
+    <section class="extract-cta">
+      <div class="extract-cta-inner">
+        <p class="eyebrow">POUR ALLER PLUS LOIN</p>
+
+        <h2>
+          Les fragments ne sont<br>
+          <em>qu'un début.</em>
+        </h2>
+
+        <p>
+          Derrière ces quelques mots se trouve une histoire plus vaste :
+          un parcours personnel, des blessures, des contradictions et
+          une volonté de continuer à avancer.
+        </p>
+
+        <a class="button" href="livre.html">
+          DÉCOUVRIR LE LIVRE <span>↗</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PIED DE PAGE -->
+
+  <footer class="site-footer">
+    <p><a href="index.html">ROMAIN<span>.R</span></a></p>
+
+    <p>
+      <em>Danser avec le diable</em> — Ma valse entre addiction et chemsex
+    </p>
+
+    <nav aria-label="Navigation de pied de page">
+      <a href="livre.html">Le livre</a>
+      <a href="auteur.html">L'auteur</a>
+      <a href="extraits.html">Extraits</a>
+      <a href="faq.html">FAQ</a>
+      <a href="ressources.html">Ressources</a>
+    </nav>
+
+    <p class="footer-note">© Romain.R — Tous droits réservés.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
