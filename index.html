@@ -16,43 +16,50 @@
   <link rel="stylesheet" href="fragments.css">
 
   <style>
-    /* Illustrations cliquables de la page d'accueil */
-    .home-image-link {
+    /* Harmonisation du menu avec l'identité visuelle du site */
+    .site-header .navigation a {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* Images d'accès aux pages */
+    .home-page-link {
       display: block;
-      width: 100%;
-      max-width: 100%;
-      margin: 0 auto;
-      text-decoration: none;
-      line-height: 0;
-      border: 1px solid rgba(180, 75, 75, 0.5);
-      transition: border-color 0.3s ease, opacity 0.3s ease;
+      width: min(100% - 40px, 1000px);
+      margin: 60px auto;
+      overflow: hidden;
+      border: 1px solid rgba(193, 90, 93, 0.35);
+      background: #171211;
+      transition: border-color 0.3s ease, transform 0.3s ease;
     }
 
-    .home-image-link:hover,
-    .home-image-link:focus-visible {
-      border-color: rgba(220, 115, 100, 0.95);
-      opacity: 0.94;
+    .home-page-link:hover {
+      border-color: #c15a5d;
+      transform: translateY(-3px);
     }
 
-    .home-image-link img {
+    .home-page-link img {
       display: block;
       width: 100%;
       height: auto;
     }
 
-    .home-image-section {
-      padding: 70px 4%;
+    .home-page-link:focus-visible {
+      outline: 2px solid #c15a5d;
+      outline-offset: 5px;
     }
 
-    .home-image-container {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+    @media (max-width: 760px) {
+      .site-header .navigation a {
+        font-size: 13px;
+      }
 
-    @media (max-width: 600px) {
-      .home-image-section {
-        padding: 45px 4%;
+      .home-page-link {
+        width: calc(100% - 32px);
+        margin: 36px auto;
       }
     }
   </style>
@@ -60,20 +67,23 @@
 
 <body>
   <header class="site-header">
-    <a class="logo" href="#accueil">ROMAIN<span>.R</span></a>
+    <a class="logo" href="index.html#accueil">ROMAIN<span>.R</span></a>
 
-    <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+    <button class="menu-toggle"
+            aria-label="Ouvrir le menu"
+            aria-expanded="false"
+            aria-controls="navigation">
       ☰
     </button>
 
     <nav class="navigation" id="navigation">
-      <a href="#accueil">Accueil</a>
+      <a href="index.html#accueil">Accueil</a>
       <a href="livre.html">Le livre</a>
       <a href="auteur.html">L'auteur</a>
-      <a href="#extraits">Extraits</a>
-      <a href="#faq-visuel">FAQ</a>
+      <a href="extraits.html">Extraits</a>
+      <a href="faq.html">FAQ</a>
       <a href="ressources.html">Ressources</a>
-      <a href="#contact">Contact</a>
+      <a href="index.html#contact">Contact</a>
     </nav>
   </header>
 
@@ -103,29 +113,23 @@
       <span class="vertical-note">UNE HISTOIRE VÉCUE · UNE VOIX LIBRE</span>
     </section>
 
-    <!-- PRÉSENTATION DU LIVRE -->
+    <!-- LE LIVRE -->
     <section class="book-section section" id="livre">
       <div class="section-heading">
         <p class="eyebrow">AU CŒUR DU RÉCIT</p>
-
         <h2>Un livre. <em>Une vérité.</em></h2>
-
         <p>Mettre des mots sur l'indicible. Regarder les ombres en face.</p>
       </div>
 
       <div class="book-layout">
         <div class="book-art">
-          <img
-            src="couverture-livre.png"
-            alt="Couverture du livre Danser avec le diable"
-          >
+          <img src="couverture-livre.png"
+               alt="Couverture du livre Danser avec le diable">
         </div>
 
         <div class="book-copy">
           <p class="eyebrow">LE TÉMOIGNAGE</p>
-
           <h3>Danser avec<br>le diable</h3>
-
           <p class="book-subtitle">Ma valse entre addiction et chemsex</p>
 
           <p>
@@ -164,22 +168,13 @@
       </div>
     </section>
 
-    <!-- ACCÈS AUX EXTRAITS : IMAGE SEULE -->
-    <section class="fragments-section home-image-section" id="extraits">
-      <div class="fragments-container home-image-container">
-        <a
-          class="home-image-link"
-          href="extraits.html"
-          aria-label="Découvrir les extraits de Danser avec le diable"
-        >
-          <img
-            src="extraits-accueil.png"
-            alt="Un chat noir suit un fil rouge dans une ruelle sombre, invitation à découvrir les extraits du livre."
-            loading="lazy"
-          >
-        </a>
-      </div>
-    </section>
+    <!-- ACCÈS AUX EXTRAITS -->
+    <a class="home-page-link"
+       href="extraits.html"
+       aria-label="Découvrir les extraits du livre">
+      <img src="extraits-accueil.png"
+           alt="Illustration des extraits de Danser avec le diable">
+    </a>
 
     <!-- CITATION -->
     <section class="quote-section">
@@ -193,61 +188,40 @@
       <span class="quote-line"></span>
     </section>
 
-    <!-- ACCÈS À LA PAGE AUTEUR : IMAGE SEULE -->
-    <section class="home-image-section" id="auteur-visuel">
-      <div class="home-image-container">
-        <a
-          class="home-image-link"
-          href="auteur.html"
-          aria-label="En savoir plus sur l'auteur"
-        >
-          <img
-            src="auteur-accueil.png"
-            alt="Un homme écrit son histoire à un bureau ancien éclairé à la bougie, entouré de livres, de souvenirs et d'un fil rouge."
-            loading="lazy"
-          >
-        </a>
-      </div>
-    </section>
+    <!-- ACCÈS À L'AUTEUR -->
+    <a class="home-page-link"
+       href="auteur.html"
+       aria-label="Découvrir l'auteur">
+      <img src="auteur-accueil.png"
+           alt="Illustration de la page auteur de Danser avec le diable">
+    </a>
 
-    <!-- ACCÈS À LA FAQ : IMAGE SEULE -->
-    <section class="home-image-section" id="faq-visuel">
-      <div class="home-image-container">
-        <a
-          class="home-image-link"
-          href="faq.html"
-          aria-label="Accéder à la foire aux questions"
-        >
-          <img
-            src="faq-accueil.png"
-            alt="Illustration de la FAQ dans une atmosphère sombre et cuivrée."
-            loading="lazy"
-          >
-        </a>
-      </div>
-    </section>
+    <!-- ACCÈS À LA FAQ -->
+    <a class="home-page-link"
+       href="faq.html"
+       aria-label="Consulter la foire aux questions">
+      <img src="faq-accueil.png"
+           alt="Illustration de la FAQ de Danser avec le diable">
+    </a>
 
-    <!-- RESSOURCES D'AIDE ET DE PRÉVENTION -->
-    <section class="faq-section section support-section" id="appel-ressources">
-      <p class="eyebrow">ÉCOUTE · SOUTIEN · ACCOMPAGNEMENT</p>
-
-      <h2>Vous n'avez pas à<br><em>traverser ça seul.</em></h2>
+    <!-- RESSOURCES -->
+    <section class="resources-section section" id="ressources">
+      <p class="eyebrow">NE PAS RESTER SEUL</p>
+      <h2>Des ressources pour <em>être accompagné.</em></h2>
 
       <p>
-        Si certains passages de mon histoire font écho à la vôtre,
-        des associations et des services peuvent vous écouter,
-        vous informer et vous accompagner, sans jugement.
+        Des informations et des contacts pour les personnes concernées
+        par les addictions, le chemsex ou une détresse psychologique.
       </p>
 
       <a class="button" href="ressources.html">
-        DÉCOUVRIR LES RESSOURCES <span>↗</span>
+        CONSULTER LES RESSOURCES <span>↗</span>
       </a>
     </section>
 
     <!-- CONTACT -->
     <section class="contact-section section" id="contact">
       <p class="eyebrow">RESTONS EN CONTACT</p>
-
       <h2>La suite s'écrit <em>bientôt.</em></h2>
 
       <p>
@@ -262,11 +236,11 @@
   </main>
 
   <footer>
-    <a class="logo" href="#accueil">ROMAIN<span>.R</span></a>
+    <a class="logo" href="index.html#accueil">ROMAIN<span>.R</span></a>
 
     <p>© 2026 Romain.R — <em>Danser avec le diable</em></p>
 
-    <a href="#accueil">RETOUR EN HAUT ↑</a>
+    <a href="index.html#accueil">RETOUR EN HAUT ↑</a>
   </footer>
 
   <script src="script.js"></script>
