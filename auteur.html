@@ -1,0 +1,642 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Découvrez Romain.R, l'auteur de Danser avec le diable — Ma valse entre addiction et chemsex. Un témoignage personnel, sincère et sans jugement."
+  >
+
+  <meta name="theme-color" content="#100d0c">
+
+  <title>L'auteur — Danser avec le diable | Romain.R</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="fragments.css">
+
+  <style>
+    /* PAGE L'AUTEUR */
+
+    .author-hero {
+      position: relative;
+      min-height: 72vh;
+      min-height: 72svh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background:
+        radial-gradient(
+          ellipse at 75% 45%,
+          rgba(116, 29, 34, 0.24),
+          transparent 48%
+        ),
+        linear-gradient(
+          110deg,
+          #100d0c 0%,
+          #17100f 60%,
+          #241211 100%
+        );
+    }
+
+    .author-hero::after {
+      content: "";
+      position: absolute;
+      right: 8%;
+      top: 16%;
+      width: 1px;
+      height: 68%;
+      background: linear-gradient(
+        transparent,
+        rgba(177, 76, 67, 0.45),
+        transparent
+      );
+      pointer-events: none;
+    }
+
+    .author-hero-content {
+      position: relative;
+      z-index: 1;
+      width: min(820px, 88%);
+      padding: 145px 0 100px;
+      margin-left: 10%;
+    }
+
+    .author-hero .eyebrow {
+      color: #c16b60;
+      letter-spacing: 0.22em;
+      margin-bottom: 22px;
+    }
+
+    .author-hero h1 {
+      max-width: 800px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(48px, 7vw, 88px);
+      font-weight: 500;
+      line-height: 0.98;
+      letter-spacing: -0.035em;
+      color: #f4eee7;
+      margin: 0 0 25px;
+    }
+
+    .author-hero h1 span {
+      color: #b65a50;
+      font-style: italic;
+    }
+
+    .author-hero .author-intro {
+      max-width: 570px;
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.95;
+      color: #d2c5bc;
+      margin-bottom: 24px;
+    }
+
+    .author-hero .button {
+      margin-top: 10px;
+    }
+
+    .author-section {
+      padding: 105px 7%;
+      background: #100d0c;
+    }
+
+    .author-container {
+      max-width: 1050px;
+      margin: 0 auto;
+    }
+
+    .author-opening {
+      max-width: 800px;
+      margin: 0 auto 90px;
+      text-align: center;
+    }
+
+    .author-opening .eyebrow,
+    .author-copy .eyebrow {
+      color: #b65a50;
+      letter-spacing: 0.18em;
+      font-size: 10px;
+      margin-bottom: 18px;
+    }
+
+    .author-opening h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(34px, 4.5vw, 54px);
+      font-weight: 500;
+      line-height: 1.1;
+      color: #f1e8df;
+      margin: 0 0 25px;
+    }
+
+    .author-opening h2 em,
+    .author-copy h2 em {
+      color: #b65a50;
+      font-weight: 400;
+    }
+
+    .author-opening p {
+      max-width: 720px;
+      margin: 0 auto 18px;
+      color: #c8bbb1;
+      font-size: 14px;
+      line-height: 2;
+      font-weight: 300;
+    }
+
+    .author-divider {
+      width: 65px;
+      height: 1px;
+      background: #8f4039;
+      margin: 38px auto 0;
+    }
+
+    .author-copy {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .author-copy section {
+      margin-bottom: 70px;
+      scroll-margin-top: 100px;
+    }
+
+    .author-copy section:last-child {
+      margin-bottom: 0;
+    }
+
+    .author-copy h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(32px, 4vw, 45px);
+      font-weight: 500;
+      line-height: 1.15;
+      color: #f1e8df;
+      margin: 0 0 25px;
+    }
+
+    .author-copy p {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 2;
+      color: #c8bbb1;
+      margin: 0 0 20px;
+    }
+
+    .author-copy strong {
+      color: #f0e4d9;
+      font-weight: 500;
+    }
+
+    .author-highlight {
+      position: relative;
+      margin: 36px 0;
+      padding: 24px 28px;
+      border-left: 2px solid #a74d45;
+      background: rgba(130, 43, 39, 0.09);
+    }
+
+    .author-highlight p {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(23px, 3vw, 30px);
+      line-height: 1.45;
+      font-weight: 500;
+      color: #eadbd0;
+    }
+
+    .author-conclusion {
+      margin-top: 85px;
+      padding: 55px 35px;
+      text-align: center;
+      border-top: 1px solid rgba(177, 76, 67, 0.3);
+      border-bottom: 1px solid rgba(177, 76, 67, 0.3);
+      background:
+        radial-gradient(
+          ellipse at center,
+          rgba(113, 35, 34, 0.13),
+          transparent 72%
+        );
+    }
+
+    .author-conclusion .eyebrow {
+      color: #b65a50;
+      letter-spacing: 0.18em;
+      font-size: 10px;
+      margin-bottom: 22px;
+    }
+
+    .author-conclusion blockquote {
+      max-width: 750px;
+      margin: 0 auto;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(30px, 4.5vw, 48px);
+      font-weight: 500;
+      line-height: 1.25;
+      color: #f1e8df;
+    }
+
+    .author-conclusion blockquote em {
+      color: #c16b60;
+    }
+
+    .author-next {
+      padding: 85px 7%;
+      text-align: center;
+      background: #17110f;
+    }
+
+    .author-next .eyebrow {
+      color: #b65a50;
+      letter-spacing: 0.18em;
+      font-size: 10px;
+      margin-bottom: 18px;
+    }
+
+    .author-next h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(36px, 5vw, 55px);
+      font-weight: 500;
+      line-height: 1.1;
+      color: #f1e8df;
+      margin: 0 0 18px;
+    }
+
+    .author-next h2 em {
+      color: #b65a50;
+      font-weight: 400;
+    }
+
+    .author-next p {
+      max-width: 570px;
+      margin: 0 auto 20px;
+      color: #c8bbb1;
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.9;
+    }
+
+    .author-next .button {
+      margin-top: 12px;
+    }
+
+    @media (max-width: 700px) {
+      .author-hero {
+        min-height: 76svh;
+      }
+
+      .author-hero::after {
+        right: 7%;
+        top: 20%;
+        height: 58%;
+      }
+
+      .author-hero-content {
+        width: 84%;
+        padding: 125px 0 75px;
+        margin-left: 8%;
+      }
+
+      .author-hero h1 {
+        font-size: clamp(43px, 12vw, 66px);
+        line-height: 0.98;
+      }
+
+      .author-hero .author-intro {
+        font-size: 13px;
+        line-height: 1.85;
+      }
+
+      .author-section {
+        padding: 75px 7%;
+      }
+
+      .author-opening {
+        margin-bottom: 65px;
+      }
+
+      .author-opening p,
+      .author-copy p {
+        font-size: 13px;
+        line-height: 1.9;
+      }
+
+      .author-copy section {
+        margin-bottom: 55px;
+      }
+
+      .author-highlight {
+        padding: 20px;
+        margin: 28px 0;
+      }
+
+      .author-conclusion {
+        margin-top: 60px;
+        padding: 40px 18px;
+      }
+
+      .author-next {
+        padding: 65px 7%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .author-hero *,
+      .author-section *,
+      .author-next * {
+        scroll-behavior: auto;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <a class="logo" href="index.html">ROMAIN<span>.R</span></a>
+
+    <button
+      class="menu-toggle"
+      aria-label="Ouvrir le menu"
+      aria-expanded="false"
+      aria-controls="navigation"
+      type="button"
+    >
+      ☰
+    </button>
+
+    <nav class="navigation" id="navigation">
+      <a href="index.html">Accueil</a>
+      <a href="livre.html">Le livre</a>
+      <a href="auteur.html" aria-current="page">L'auteur</a>
+      <a href="extraits.html">Extraits</a>
+      <a href="faq.html">FAQ</a>
+      <a href="ressources.html">Ressources</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- INTRODUCTION -->
+
+    <section class="author-hero" id="accueil">
+      <div class="author-hero-content">
+        <p class="eyebrow">DERRIÈRE LE TÉMOIGNAGE</p>
+
+        <h1>
+          Derrière les mots,<br>
+          <span>un homme.</span>
+        </h1>
+
+        <p class="author-intro">
+          Je m'appelle Romain. Je ne suis ni psychologue, ni spécialiste.
+          Je suis simplement quelqu'un qui a décidé de raconter son histoire,
+          avec ses ombres, ses contradictions et sa volonté d'avancer.
+        </p>
+
+        <a class="button" href="#mon-histoire">
+          FAIRE CONNAISSANCE <span>↓</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- PRÉSENTATION -->
+
+    <section class="author-section" id="mon-histoire">
+      <div class="author-container">
+
+        <div class="author-opening">
+          <p class="eyebrow">QUELQUES MOTS SUR MOI</p>
+
+          <h2>
+            Une histoire personnelle.<br>
+            <em>Un homme, tout simplement.</em>
+          </h2>
+
+          <p>
+            Je m'appelle Romain. J'avais 33 ans lorsque j'ai commencé à écrire
+            <em>Danser avec le diable</em>. À ce moment-là, je n'avais pas
+            l'ambition de publier un livre. Je voulais simplement mettre
+            des mots sur mon histoire, pour moi-même, sans imaginer que
+            ces pages prendraient un jour une autre dimension.
+          </p>
+
+          <p>
+            Originaire de Châteauroux, j'ai grandi entre Châteauroux
+            et Le Poinçonnet, dans l'Indre, au cœur du Berry.
+            J'ai un caractère bien trempé, je ne me laisse pas facilement
+            faire et j'ai parfois tendance à garder mes émotions derrière
+            une carapace. Mais derrière celle-ci se cache aussi quelqu'un
+            de sensible, qui accorde beaucoup d'importance aux autres.
+          </p>
+
+          <p>
+            <strong>
+              Mon parcours a été marqué par des épreuves difficiles.
+              Pourtant, je ne veux pas qu'il me définisse entièrement.
+            </strong>
+            Il fait partie de mon histoire, mais il ne résume pas
+            la personne que je suis, ni celle que je continue de devenir.
+          </p>
+
+          <div class="author-divider"></div>
+        </div>
+
+        <div class="author-copy">
+
+          <!-- L'ÉCRITURE -->
+
+          <section id="ecriture">
+            <p class="eyebrow">01 — LE DÉCLIC DE L'ÉCRITURE</p>
+
+            <h2>
+              Écrire pour comprendre,<br>
+              <em>puis pour partager.</em>
+            </h2>
+
+            <p>
+              L'écriture n'a pas toujours occupé une place importante
+              dans ma vie. Enfant, j'avais commencé un journal intime,
+              avant de l'abandonner rapidement. À l'époque, je ne voyais
+              pas vraiment ce que l'écriture pouvait m'apporter.
+            </p>
+
+            <p>
+              Avec ce livre, j'ai découvert une autre manière d'écrire :
+              une démarche personnelle, parfois difficile, mais qui me
+              permet de prendre du recul sur mon parcours et de mettre
+              des mots sur des expériences que je n'avais pas toujours
+              su raconter.
+            </p>
+
+            <p>
+              Au fil des pages, une autre envie est apparue. Celle de
+              partager ce témoignage avec mes proches, puis peut-être
+              avec d'autres personnes. Non pas pour donner des leçons
+              ou prétendre détenir les bonnes réponses, mais simplement
+              pour raconter ce que j'ai vécu, avec sincérité.
+            </p>
+          </section>
+
+          <!-- COMPRENDRE SANS JUGER -->
+
+          <section id="sans-jugement">
+            <p class="eyebrow">02 — REGARDER AU-DELÀ DES APPARENCES</p>
+
+            <h2>
+              Ne pas juger.<br>
+              <em>Essayer de comprendre.</em>
+            </h2>
+
+            <p>
+              Si j'ai envie de partager cette histoire, c'est aussi parce
+              que je crois qu'il est important de regarder au-delà
+              des apparences.
+            </p>
+
+            <p>
+              Derrière une addiction, il peut y avoir une histoire,
+              des blessures, des traumatismes ou des difficultés que
+              l'on ne voit pas toujours. Comprendre cela ne signifie pas
+              tout excuser, mais essayer de regarder les personnes avec
+              davantage de nuance et moins de jugement.
+            </p>
+
+            <div class="author-highlight">
+              <p>
+                La reconstruction n'est pas un chemin parfaitement droit,
+                et chacun avance à sa manière.
+              </p>
+            </div>
+
+            <p>
+              Je suis encore en reconstruction aujourd'hui. J'apprends
+              à avancer à mon rythme, avec mes difficultés et
+              mes contradictions.
+            </p>
+
+            <p>
+              Je ne suis pas psychologue, ni spécialiste. Je suis
+              simplement quelqu'un qui a vécu certaines choses et qui
+              souhaite partager son expérience, sans jugement.
+            </p>
+
+            <p>
+              Si ces mots permettent à une personne de se sentir moins
+              seule, à un proche de mieux comprendre ou à quelqu'un
+              de poser un regard différent sur l'addiction, alors
+              ce partage aura déjà beaucoup de sens.
+            </p>
+          </section>
+
+          <!-- LE TÉMOIGNAGE -->
+
+          <section id="temoignage">
+            <p class="eyebrow">03 — PARTAGER MON HISTOIRE</p>
+
+            <h2>
+              Une histoire personnelle,<br>
+              <em>sans parler pour tout le monde.</em>
+            </h2>
+
+            <p>
+              <em>Danser avec le diable</em> est mon histoire, mon regard
+              et ma manière de mettre des mots sur ce que j'ai traversé.
+              Ce n'est pas une vérité universelle, ni une méthode à suivre.
+              Chaque parcours est différent, et chacun avance à son rythme.
+            </p>
+
+            <p>
+              Je continue moi aussi mon chemin. Je cherche à me reconstruire,
+              à comprendre et à avancer, sans prétendre que tout est
+              derrière moi.
+            </p>
+
+            <p>
+              Au fond, je reste un homme simple, avec ses contradictions,
+              son caractère, sa sensibilité et ses envies. Un homme qui
+              a décidé de raconter une partie de son histoire, en espérant
+              qu'elle puisse, peut-être, résonner avec celle de quelqu'un
+              d'autre.
+            </p>
+          </section>
+
+        </div>
+
+        <!-- CONCLUSION -->
+
+        <div class="author-conclusion">
+          <p class="eyebrow">POURQUOI RACONTER CETTE HISTOIRE ?</p>
+
+          <blockquote>
+            Je ne raconte pas cette histoire parce que
+            j'ai toutes les réponses.<br>
+            <em>Je la raconte parce que je sais ce que
+            c'est que de chercher à comprendre.</em>
+          </blockquote>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- DÉCOUVRIR LE LIVRE -->
+
+    <section class="author-next">
+      <p class="eyebrow">MON TÉMOIGNAGE</p>
+
+      <h2>
+        Une partie de mon histoire.<br>
+        <em>Des mots pour la raconter.</em>
+      </h2>
+
+      <p>
+        Si tu souhaites découvrir plus en détail mon parcours,
+        les sujets que j'aborde et la naissance de ce projet,
+        je t'invite à découvrir le livre.
+      </p>
+
+      <a class="button" href="livre.html">
+        DÉCOUVRIR LE LIVRE <span>↗</span>
+      </a>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      <a href="index.html">ROMAIN<span>.R</span></a>
+    </p>
+
+    <p>
+      <em>Danser avec le diable</em> — Ma valse entre addiction et chemsex
+    </p>
+
+    <nav aria-label="Navigation de pied de page">
+      <a href="livre.html">Le livre</a>
+      <a href="auteur.html">L'auteur</a>
+      <a href="faq.html">FAQ</a>
+      <a href="ressources.html">Ressources</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <p class="footer-note">
+      © Romain.R — Tous droits réservés.
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
