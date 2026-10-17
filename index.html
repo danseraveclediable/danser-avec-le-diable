@@ -17,20 +17,14 @@
   <link rel="stylesheet" href="fragments.css">
 
   <style>
-    /* ================================
-       PRÉSENTATION DE L'AUTEUR
-    ================================= */
+    /* ENCADRÉ AUTEUR */
 
     .author-preview {
       position: relative;
       padding: 95px 7%;
       overflow: hidden;
       background:
-        radial-gradient(
-          ellipse at 15% 50%,
-          rgba(142, 41, 37, 0.13),
-          transparent 55%
-        ),
+        radial-gradient(ellipse at 15% 50%, rgba(142, 41, 37, .13), transparent 55%),
         #100d0c;
     }
 
@@ -38,7 +32,7 @@
       width: min(1050px, 100%);
       margin: 0 auto;
       display: grid;
-      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+      grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
       align-items: center;
       gap: clamp(30px, 6vw, 75px);
     }
@@ -50,16 +44,16 @@
       aspect-ratio: 4 / 5;
       margin: 0 auto;
       overflow: hidden;
-      border: 1px solid rgba(179, 74, 67, 0.4);
+      border: 1px solid rgba(179, 74, 67, .4);
       background: #211715;
-      box-shadow: 0 20px 55px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 20px 55px rgba(0, 0, 0, .3);
     }
 
     .author-preview-photo::after {
       content: "";
       position: absolute;
       inset: 11px;
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, .15);
       pointer-events: none;
     }
 
@@ -90,8 +84,8 @@
 
     .author-preview-copy > p:not(.eyebrow) {
       margin-bottom: 18px;
-      color: rgba(255, 255, 255, 0.76);
-      font-size: 0.95rem;
+      color: rgba(255, 255, 255, .76);
+      font-size: .95rem;
       line-height: 1.9;
     }
 
@@ -99,6 +93,201 @@
       display: inline-block;
       margin-top: 12px;
     }
+
+    /* ENCADRÉ FAQ */
+
+    .faq-preview {
+      position: relative;
+      isolation: isolate;
+      padding: 65px 6%;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 5% 50%, rgba(142, 41, 37, .2), transparent 48%),
+        radial-gradient(ellipse at 100% 100%, rgba(105, 30, 25, .13), transparent 45%),
+        #100d0c;
+    }
+
+    .faq-preview::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: 45%;
+      height: 1px;
+      right: -3%;
+      bottom: 22%;
+      background: linear-gradient(90deg, transparent, #8e2925, transparent);
+      transform: rotate(-17deg);
+      opacity: .8;
+    }
+
+    .faq-preview-container {
+      width: min(1100px, 100%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      align-items: center;
+      gap: clamp(30px, 6vw, 75px);
+      padding: 35px;
+      border: 1px solid rgba(179, 74, 67, .35);
+      background: rgba(0, 0, 0, .16);
+    }
+
+    /* Illustration décorative construite en CSS */
+
+    .faq-preview-art {
+      position: relative;
+      display: flex;
+      min-height: 330px;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border: 1px solid rgba(179, 74, 67, .45);
+      background:
+        radial-gradient(ellipse at 25% 75%, rgba(153, 47, 38, .38), transparent 42%),
+        radial-gradient(ellipse at 75% 20%, rgba(104, 34, 28, .25), transparent 50%),
+        #100b0a;
+    }
+
+    .faq-preview-art::before {
+      content: "";
+      position: absolute;
+      inset: 12px;
+      border: 1px solid rgba(255, 255, 255, .12);
+      pointer-events: none;
+    }
+
+    .faq-art-glow {
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      left: 10%;
+      bottom: -35px;
+      border-radius: 50%;
+      background: rgba(158, 43, 34, .23);
+      filter: blur(35px);
+    }
+
+    .faq-art-books {
+      position: relative;
+      width: 72%;
+      max-width: 320px;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      transform: rotate(-4deg);
+    }
+
+    .faq-art-book {
+      position: relative;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(195, 104, 82, .48);
+      background: linear-gradient(110deg, #291512, #4a211b 45%, #1b100e);
+      box-shadow: 0 10px 18px rgba(0, 0, 0, .4);
+    }
+
+    .faq-art-book:nth-child(2) {
+      margin-left: 12px;
+      background: linear-gradient(110deg, #1c100e, #54241d 50%, #25120f);
+    }
+
+    .faq-art-book:nth-child(3) {
+      margin-left: -8px;
+      background: linear-gradient(110deg, #381915, #24110f 55%, #4b201a);
+    }
+
+    .faq-art-book span {
+      color: #d3a092;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.1rem;
+      letter-spacing: .08em;
+    }
+
+    .faq-art-question {
+      position: absolute;
+      top: -45px;
+      right: 8%;
+      width: 78px;
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(179, 74, 67, .6);
+      background: #1c100e;
+      color: #b34a43;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 3.8rem;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, .4);
+    }
+
+    .faq-art-candle {
+      position: absolute;
+      left: 10%;
+      bottom: 12%;
+      width: 48px;
+      height: 76px;
+      border: 1px solid rgba(190, 113, 84, .45);
+      border-radius: 4px 4px 9px 9px;
+      background: linear-gradient(90deg, #291613, #633025, #24110e);
+      box-shadow: 0 0 35px rgba(158, 43, 34, .16);
+    }
+
+    .faq-art-candle::before {
+      content: "";
+      position: absolute;
+      top: -15px;
+      left: 21px;
+      width: 7px;
+      height: 15px;
+      border-radius: 100% 0 100% 0;
+      background: #cf6a48;
+      box-shadow: 0 0 22px rgba(224, 91, 54, .65);
+      transform: rotate(25deg);
+    }
+
+    .faq-art-ribbon {
+      position: absolute;
+      bottom: 9%;
+      left: 16%;
+      width: 68%;
+      height: 30px;
+      border-bottom: 2px solid rgba(179, 74, 67, .7);
+      border-radius: 50%;
+      transform: rotate(-7deg);
+    }
+
+    .faq-preview-copy {
+      min-width: 0;
+    }
+
+    .faq-preview-copy h2 {
+      margin: 20px 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2.5rem, 5vw, 4.2rem);
+      font-weight: 500;
+      line-height: 1.03;
+    }
+
+    .faq-preview-copy h2 em {
+      color: #b34a43;
+      font-weight: 400;
+    }
+
+    .faq-preview-copy > p:not(.eyebrow) {
+      margin: 0 0 20px;
+      color: rgba(255, 255, 255, .76);
+      font-size: .95rem;
+      line-height: 1.9;
+    }
+
+    .faq-preview-copy .button {
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    /* RESPONSIVE */
 
     @media (max-width: 700px) {
       .author-preview {
@@ -115,6 +304,28 @@
       }
 
       .author-preview-copy h2 {
+        font-size: clamp(2.5rem, 10vw, 3.4rem);
+      }
+
+      .faq-preview {
+        padding: 55px 6%;
+      }
+
+      .faq-preview-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 18px;
+      }
+
+      .faq-preview-art {
+        min-height: 260px;
+      }
+
+      .faq-preview-copy {
+        padding: 8px 5px 12px;
+      }
+
+      .faq-preview-copy h2 {
         font-size: clamp(2.5rem, 10vw, 3.4rem);
       }
     }
@@ -134,9 +345,7 @@
       aria-expanded="false"
       aria-controls="navigation"
       type="button"
-    >
-      ☰
-    </button>
+    >☰</button>
 
     <nav class="navigation" id="navigation">
       <a href="#accueil">Accueil</a>
@@ -144,14 +353,14 @@
       <a href="auteur.html">L'auteur</a>
       <a href="#extraits">Extraits</a>
       <a href="ressources.html">Ressources</a>
-      <a href="#faq">FAQ</a>
+      <a href="faq.html">FAQ</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <main>
 
-    <!-- HERO : PRÉSENTATION DU LIVRE -->
+    <!-- HERO -->
 
     <section class="hero" id="accueil">
       <div class="hero-overlay"></div>
@@ -182,9 +391,7 @@
     <section class="book-section section" id="livre">
       <div class="section-heading">
         <p class="eyebrow">AU CŒUR DU RÉCIT</p>
-
         <h2>Un livre. <em>Une vérité.</em></h2>
-
         <p>Mettre des mots sur l'indicible. Regarder les ombres en face.</p>
       </div>
 
@@ -236,6 +443,56 @@
             EXPLORER LE LIVRE <span>↗</span>
           </a>
         </div>
+      </div>
+    </section>
+
+    <!-- NOUVEL ENCADRÉ FAQ -->
+
+    <section class="faq-preview" aria-labelledby="faq-preview-title">
+      <div class="faq-preview-container">
+
+        <div
+          class="faq-preview-art"
+          role="img"
+          aria-label="Illustration symbolique de livres, d'une bougie et d'un point d'interrogation dans une ambiance rouge et sombre"
+        >
+          <div class="faq-art-glow"></div>
+          <div class="faq-art-candle"></div>
+
+          <div class="faq-art-books">
+            <div class="faq-art-question">?</div>
+            <div class="faq-art-book"><span>LES QUESTIONS</span></div>
+            <div class="faq-art-book"><span>LES RÉPONSES</span></div>
+            <div class="faq-art-book"><span>LE TÉMOIGNAGE</span></div>
+          </div>
+
+          <div class="faq-art-ribbon"></div>
+        </div>
+
+        <div class="faq-preview-copy">
+          <p class="eyebrow">FAQ — CŒUR DU RÉCIT</p>
+
+          <h2 id="faq-preview-title">
+            Des questions<br>
+            <em>sur le livre ?</em>
+          </h2>
+
+          <p>
+            Publication, contenu, formats, témoignage…
+            J'ai rassemblé ici les réponses aux questions
+            les plus fréquentes.
+          </p>
+
+          <p>
+            Si tu ne trouves pas ta réponse, tu peux aussi
+            me contacter directement.
+          </p>
+
+          <a class="button" href="faq.html">
+            CONSULTER LA FAQ <span>↗</span>
+          </a>
+        </div>
+
       </div>
     </section>
 
@@ -304,7 +561,6 @@
             ENTRER DANS LE LIVRE <span>↗</span>
           </a>
         </div>
-
       </div>
     </section>
 
@@ -361,47 +617,6 @@
       </div>
     </section>
 
-    <!-- FAQ -->
-
-    <section class="faq-section section" id="faq">
-      <p class="eyebrow">VOUS VOUS POSEZ DES QUESTIONS</p>
-
-      <h2>Quelques <em>réponses.</em></h2>
-
-      <details>
-        <summary>De quoi parle le livre ?</summary>
-        <p>
-          D'un parcours autobiographique autour de l'addiction,
-          du chemsex et de blessures personnelles.
-        </p>
-      </details>
-
-      <details>
-        <summary>Quand sera-t-il disponible ?</summary>
-        <p>
-          La sortie est prévue début 2027, sous réserve de finalisation
-          du manuscrit et de la préparation de la publication.
-          Les informations définitives seront communiquées sur ce site.
-        </p>
-      </details>
-
-      <details>
-        <summary>Le livre sera-t-il disponible en papier et en numérique ?</summary>
-        <p>
-          Plusieurs formats sont envisagés. Les détails seront précisés
-          à l'approche de la sortie.
-        </p>
-      </details>
-
-      <details>
-        <summary>Est-ce une histoire vraie ?</summary>
-        <p>
-          Oui. Il s'agit d'un récit autobiographique raconté à la première
-          personne.
-        </p>
-      </details>
-    </section>
-
     <!-- CONTACT -->
 
     <section class="contact-section section" id="contact">
@@ -430,6 +645,7 @@
 
     <a href="auteur.html">DÉCOUVRIR L'AUTEUR ↗</a>
     <a href="ressources.html">RESSOURCES</a>
+    <a href="faq.html">FAQ</a>
     <a href="#accueil">RETOUR EN HAUT ↑</a>
   </footer>
 
