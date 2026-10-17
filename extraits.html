@@ -9,74 +9,194 @@
 
   <meta
     name="description"
-    content="Découvrez deux extraits de Danser avec le diable, le récit autobiographique de Romain.R. entre addiction, blessures et reconstruction."
+    content="Découvrez deux extraits de Danser avec le diable, le récit autobiographique de Romain.R, entre addiction, blessures et reconstruction."
   >
+
+  <meta name="theme-color" content="#100d0c">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="fragments.css">
 
   <style>
+    /* ========================================
+       BASE ET PROTECTION CONTRE LES DÉBORDEMENTS
+    ======================================== */
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: clip;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+      overflow-x: clip;
+    }
+
+    img,
+    video,
+    iframe {
+      max-width: 100%;
+    }
+
+    main {
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+    }
+
+    main section,
+    main article {
+      min-width: 0;
+    }
+
+    /* ========================================
+       EN-TÊTE
+    ======================================== */
+
+    .site-header {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .nav-container {
+      width: min(100% - 40px, 1200px);
+      max-width: 100%;
+      margin-inline: auto;
+      min-width: 0;
+    }
+
+    .nav-links a {
+      white-space: normal;
+    }
+
+    @media (min-width: 769px) {
+      .nav-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 10px 18px;
+        min-width: 0;
+      }
+    }
+
+    /* ========================================
+       INTRODUCTION
+    ======================================== */
+
     .extraits-hero {
+      width: 100%;
+      max-width: 100%;
       padding: 90px 24px 45px;
       text-align: center;
     }
 
-    .extraits-hero h1 {
+    .extraits-hero .extrait-label {
       margin-bottom: 18px;
+      overflow-wrap: anywhere;
+    }
+
+    .extraits-hero h1 {
+      max-width: 100%;
+      margin: 0 0 22px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      line-height: 1.08;
+      overflow-wrap: anywhere;
     }
 
     .extraits-intro {
+      width: 100%;
       max-width: 720px;
       margin: 0 auto;
-      line-height: 1.8;
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      line-height: 1.9;
       opacity: 0.9;
+      overflow-wrap: break-word;
     }
 
+    /* ========================================
+       CARTES DES EXTRAITS
+    ======================================== */
+
     .extraits-cards {
-      width: min(100% - 40px, 900px);
-      margin: 30px auto 90px;
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: minmax(0, 1fr);
       gap: 28px;
+      width: calc(100% - 48px);
+      max-width: 900px;
+      min-width: 0;
+      margin: 30px auto 65px;
     }
 
     .extrait-card {
-      padding: 38px 34px;
-      border: 1px solid rgba(190, 70, 55, 0.35);
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      padding: clamp(24px, 4vw, 42px);
+      border: 1px solid rgba(190, 70, 55, 0.42);
       border-radius: 4px;
       background: rgba(255, 255, 255, 0.025);
       text-align: center;
+      overflow-wrap: break-word;
     }
 
     .extrait-label {
-      margin-bottom: 22px;
+      margin: 0 0 22px;
       color: #c66b5b;
+      font-family: "Montserrat", sans-serif;
       font-size: 0.76rem;
       letter-spacing: 0.16em;
+      line-height: 1.7;
       text-transform: uppercase;
     }
 
     .extrait-card blockquote {
-      margin: 0 auto;
+      width: 100%;
       max-width: 720px;
+      margin: 0 auto;
       font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      font-size: clamp(1.65rem, 3.5vw, 2.65rem);
       font-style: italic;
-      line-height: 1.55;
+      line-height: 1.45;
+      overflow-wrap: break-word;
+      hyphens: auto;
     }
 
     .extrait-separator {
       width: 48px;
       height: 1px;
-      margin: 26px auto;
+      margin: 28px auto;
       background: #a84437;
     }
 
     .extrait-reference {
       margin: 0;
       font-size: 0.9rem;
-      line-height: 1.7;
-      opacity: 0.8;
+      line-height: 1.8;
+      opacity: 0.82;
+      overflow-wrap: break-word;
     }
 
     .extrait-reference strong {
@@ -85,51 +205,214 @@
       font-weight: 600;
     }
 
+    /* ========================================
+       NOTE DE FIN DES EXTRAITS
+    ======================================== */
+
     .extrait-note {
+      width: calc(100% - 48px);
       max-width: 650px;
       margin: 0 auto;
       text-align: center;
-      line-height: 1.8;
+      line-height: 1.9;
       opacity: 0.8;
+      overflow-wrap: break-word;
     }
 
+    /* ========================================
+       CONCLUSION ÉDITORIALE
+    ======================================== */
+
     .extraits-cta {
-      padding: 55px 24px 80px;
+      position: relative;
+      isolation: isolate;
+      width: calc(100% - 48px);
+      max-width: 900px;
+      margin: 75px auto 70px;
+      padding: clamp(32px, 6vw, 68px) clamp(22px, 5vw, 60px);
+      border: 1px solid rgba(190, 70, 55, 0.48);
+      border-radius: 4px;
+      background:
+        linear-gradient(
+          145deg,
+          rgba(130, 45, 35, 0.11),
+          rgba(255, 255, 255, 0.018) 55%,
+          rgba(130, 45, 35, 0.06)
+        );
       text-align: center;
+      overflow: hidden;
+    }
+
+    .extraits-cta::before {
+      content: "";
+      display: block;
+      width: 48px;
+      height: 1px;
+      margin: 0 auto 25px;
+      background: #c66b5b;
+    }
+
+    .extraits-cta h2 {
+      max-width: 100%;
+      margin: 0 auto 22px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(2.1rem, 5vw, 3.6rem);
+      font-weight: 500;
+      line-height: 1.15;
+      overflow-wrap: break-word;
+      text-wrap: balance;
     }
 
     .extraits-cta p {
-      max-width: 650px;
-      margin: 0 auto 25px;
-      line-height: 1.8;
+      width: 100%;
+      max-width: 620px;
+      margin: 0 auto 30px;
+      font-size: 1rem;
+      line-height: 1.9;
+      opacity: 0.86;
+      overflow-wrap: break-word;
     }
 
-    .extraits-cta .btn,
-    .extraits-cta a {
-      display: inline-block;
+    .extraits-cta .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      max-width: 100%;
+      min-height: 52px;
+      padding: 15px 26px;
+      border: 1px solid rgba(198, 107, 91, 0.9);
+      border-radius: 2px;
+      background: rgba(198, 107, 91, 0.08);
+      color: #f0e6d9;
+      font-family: "Montserrat", sans-serif;
+      font-size: 0.83rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      line-height: 1.5;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+      overflow-wrap: anywhere;
+      transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
     }
+
+    .extraits-cta .btn::after {
+      content: "↗";
+      font-size: 1.1rem;
+    }
+
+    .extraits-cta .btn:hover,
+    .extraits-cta .btn:focus-visible {
+      border-color: #d58a78;
+      background: rgba(198, 107, 91, 0.19);
+      transform: translateY(-2px);
+    }
+
+    /* ========================================
+       PIED DE PAGE
+    ======================================== */
+
+    .site-footer {
+      width: 100%;
+      max-width: 100%;
+      margin-top: 0;
+      padding: 28px 24px 34px;
+      border-top: 1px solid rgba(190, 70, 55, 0.3);
+      text-align: center;
+    }
+
+    .site-footer p {
+      max-width: 100%;
+      margin: 0;
+      font-size: 0.82rem;
+      line-height: 1.8;
+      letter-spacing: 0.04em;
+      opacity: 0.72;
+      overflow-wrap: break-word;
+    }
+
+    /* ========================================
+       ADAPTATION MOBILE
+    ======================================== */
 
     @media (max-width: 600px) {
       .extraits-hero {
         padding: 65px 20px 35px;
       }
 
+      .extraits-hero h1 {
+        font-size: clamp(2.6rem, 12vw, 3.5rem);
+      }
+
+      .extraits-intro {
+        font-size: 1rem;
+        line-height: 1.8;
+      }
+
       .extraits-cards {
         width: calc(100% - 32px);
         margin-top: 20px;
+        margin-bottom: 45px;
         gap: 20px;
       }
 
       .extrait-card {
-        padding: 30px 22px;
+        padding: 28px 20px;
       }
 
       .extrait-card blockquote {
-        font-size: 1.65rem;
+        font-size: clamp(1.55rem, 7vw, 1.9rem);
+        line-height: 1.48;
+      }
+
+      .extrait-label {
+        font-size: 0.7rem;
+        letter-spacing: 0.13em;
+      }
+
+      .extrait-note {
+        width: calc(100% - 36px);
+        font-size: 0.94rem;
       }
 
       .extraits-cta {
-        padding: 35px 20px 60px;
+        width: calc(100% - 32px);
+        margin: 48px auto 45px;
+        padding: 35px 22px 40px;
+      }
+
+      .extraits-cta h2 {
+        font-size: clamp(2rem, 9vw, 2.7rem);
+      }
+
+      .extraits-cta p {
+        font-size: 0.96rem;
+        line-height: 1.8;
+      }
+
+      .extraits-cta .btn {
+        width: 100%;
+        padding-inline: 14px;
+        font-size: 0.76rem;
+        letter-spacing: 0.07em;
+      }
+
+      .site-footer {
+        padding: 24px 18px 30px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .extraits-cta .btn {
+        transition: none;
       }
     }
   </style>
@@ -166,6 +449,7 @@
 
   <main>
 
+    <!-- INTRODUCTION -->
     <section class="extraits-hero">
       <p class="extrait-label">Quelques mots du livre</p>
 
@@ -179,9 +463,9 @@
       </p>
     </section>
 
+    <!-- EXTRAITS DU LIVRE -->
     <section class="extraits-cards" aria-label="Extraits du livre">
 
-      <!-- EXTRAIT 1 : PERMANENT -->
       <article class="extrait-card">
         <p class="extrait-label">Extrait permanent</p>
 
@@ -198,7 +482,6 @@
         </p>
       </article>
 
-      <!-- EXTRAIT 2 : À FAIRE ÉVOLUER AU FIL DU TEMPS -->
       <article class="extrait-card">
         <p class="extrait-label">Un passage du récit</p>
 
@@ -217,13 +500,15 @@
 
     </section>
 
+    <!-- NOTE DE FIN -->
     <p class="extrait-note">
       Ces extraits ne racontent pas toute l’histoire.
       Ils en ouvrent simplement une porte.
     </p>
 
+    <!-- CONCLUSION -->
     <section class="extraits-cta">
-      <h2>Envie de découvrir la suite ?</h2>
+      <h2>Envie de découvrir la suite&nbsp;?</h2>
 
       <p>
         <em>Danser avec le diable</em> est un récit personnel
@@ -239,7 +524,7 @@
   </main>
 
   <footer class="site-footer">
-    <p>© Romain.R — Danser avec le diable</p>
+    <p>© 2026 Romain.R — Danser avec le diable</p>
   </footer>
 
   <script src="script.js"></script>
