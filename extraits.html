@@ -5,11 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Les fragments du diable | Danser avec le diable</title>
+  <title>Extraits | Danser avec le diable</title>
 
   <meta
     name="description"
-    content="Découvrez deux extraits de Danser avec le diable, le récit autobiographique de Romain.R, entre ombre et lumière."
+    content="Découvrez deux extraits de Danser avec le diable, le récit autobiographique de Romain.R. entre addiction, blessures et reconstruction."
   >
 
   <link rel="stylesheet" href="styles.css">
@@ -17,132 +17,119 @@
 
   <style>
     .extraits-hero {
-      min-height: 42vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      padding: 90px 24px 45px;
       text-align: center;
-      padding: 100px 24px 70px;
-    }
-
-    .extraits-hero .eyebrow {
-      color: #c47b64;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      font-size: 0.75rem;
     }
 
     .extraits-hero h1 {
-      font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: clamp(2.7rem, 7vw, 5rem);
-      font-weight: 400;
-      line-height: 1.05;
-      margin: 20px 0;
-    }
-
-    .extraits-hero h1 em {
-      color: #b85c49;
+      margin-bottom: 18px;
     }
 
     .extraits-intro {
-      max-width: 680px;
+      max-width: 720px;
       margin: 0 auto;
-      padding: 0 24px 55px;
-      text-align: center;
       line-height: 1.8;
+      opacity: 0.9;
     }
 
     .extraits-cards {
-      width: min(100% - 40px, 1000px);
-      margin: 0 auto 90px;
+      width: min(100% - 40px, 900px);
+      margin: 30px auto 90px;
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: 1fr;
       gap: 28px;
     }
 
     .extrait-card {
-      position: relative;
-      padding: 38px 30px;
-      border: 1px solid rgba(196, 123, 100, 0.35);
-      background: rgba(20, 17, 17, 0.82);
-      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.2);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 310px;
+      padding: 38px 34px;
+      border: 1px solid rgba(190, 70, 55, 0.35);
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.025);
+      text-align: center;
     }
 
-    .extrait-reference {
-      color: #c47b64;
-      font-size: 0.72rem;
-      letter-spacing: 0.13em;
-      line-height: 1.8;
+    .extrait-label {
+      margin-bottom: 22px;
+      color: #c66b5b;
+      font-size: 0.76rem;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      margin: 0 0 26px;
     }
 
     .extrait-card blockquote {
+      margin: 0 auto;
+      max-width: 720px;
       font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: clamp(1.45rem, 2.7vw, 2rem);
-      line-height: 1.45;
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
       font-style: italic;
-      margin: 0 0 30px;
+      line-height: 1.55;
     }
 
     .extrait-separator {
       width: 48px;
-      height: 2px;
-      background: #a84f40;
-      margin-bottom: 20px;
+      height: 1px;
+      margin: 26px auto;
+      background: #a84437;
+    }
+
+    .extrait-reference {
+      margin: 0;
+      font-size: 0.9rem;
+      line-height: 1.7;
+      opacity: 0.8;
+    }
+
+    .extrait-reference strong {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 600;
     }
 
     .extrait-note {
-      font-size: 0.88rem;
-      line-height: 1.7;
-      opacity: 0.78;
-      margin: 0;
+      max-width: 650px;
+      margin: 0 auto;
+      text-align: center;
+      line-height: 1.8;
+      opacity: 0.8;
     }
 
     .extraits-cta {
+      padding: 55px 24px 80px;
       text-align: center;
-      padding: 65px 24px 85px;
-      border-top: 1px solid rgba(196, 123, 100, 0.2);
-    }
-
-    .extraits-cta h2 {
-      font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      font-weight: 400;
-      margin: 0 0 18px;
     }
 
     .extraits-cta p {
-      max-width: 580px;
-      margin: 0 auto 28px;
+      max-width: 650px;
+      margin: 0 auto 25px;
       line-height: 1.8;
     }
 
-    @media (max-width: 700px) {
+    .extraits-cta .btn,
+    .extraits-cta a {
+      display: inline-block;
+    }
+
+    @media (max-width: 600px) {
       .extraits-hero {
-        min-height: auto;
-        padding: 95px 22px 55px;
+        padding: 65px 20px 35px;
       }
 
       .extraits-cards {
-        grid-template-columns: 1fr;
-        width: min(100% - 32px, 520px);
+        width: calc(100% - 32px);
+        margin-top: 20px;
         gap: 20px;
-        margin-bottom: 65px;
       }
 
       .extrait-card {
-        min-height: 0;
-        padding: 30px 24px;
+        padding: 30px 22px;
       }
 
       .extrait-card blockquote {
-        font-size: 1.7rem;
+        font-size: 1.65rem;
+      }
+
+      .extraits-cta {
+        padding: 35px 20px 60px;
       }
     }
   </style>
@@ -151,14 +138,14 @@
 <body>
 
   <header class="site-header">
-    <nav class="nav-container" aria-label="Navigation principale">
-      <a class="logo" href="index.html">ROMAIN.R</a>
+    <nav class="nav-container">
+      <a href="index.html" class="logo">Danser avec le diable</a>
 
       <button
         class="menu-toggle"
-        type="button"
         aria-label="Ouvrir le menu"
         aria-expanded="false"
+        type="button"
       >
         <span></span>
         <span></span>
@@ -180,106 +167,79 @@
   <main>
 
     <section class="extraits-hero">
-      <p class="eyebrow">Des mots échappés de l'ombre</p>
+      <p class="extrait-label">Quelques mots du livre</p>
 
-      <h1>
-        Les fragments<br>
-        <em>du diable.</em>
-      </h1>
+      <h1>Extraits</h1>
 
-      <p>
-        Deux fragments, une même histoire.
-        Des mots tirés du manuscrit, entre ombre et lumière.
-      </p>
-    </section>
-
-    <section class="extraits-intro">
-      <p>
-        Certains mots restent avec nous longtemps après avoir été lus.
-        Ici, un premier extrait demeure au fil du temps.
-        Le second évoluera pour vous faire découvrir d'autres pages
-        de <em>Danser avec le diable</em>.
+      <p class="extraits-intro">
+        Certaines histoires sont difficiles à raconter.
+        D'autres trouvent leur chemin à travers quelques phrases.
+        Voici deux passages de <em>Danser avec le diable</em>,
+        deux instants choisis au fil du récit.
       </p>
     </section>
 
     <section class="extraits-cards" aria-label="Extraits du livre">
 
-      <!-- EXTRAIT PERMANENT -->
+      <!-- EXTRAIT 1 : PERMANENT -->
       <article class="extrait-card">
-        <div>
-          <p class="extrait-reference">
-            Extrait permanent<br>
-            Prologue · La dernière danse
-          </p>
+        <p class="extrait-label">Extrait permanent</p>
 
-          <blockquote>
-            « Je ne savais pas encore que certaines choses qui nous
-            donnent l’impression de voler peuvent aussi nous apprendre
-            à tomber. »
-          </blockquote>
-        </div>
+        <blockquote>
+          « Je ne savais pas encore que certaines choses qui nous donnent
+          l’impression de voler peuvent aussi nous apprendre à tomber. »
+        </blockquote>
 
-        <div>
-          <div class="extrait-separator"></div>
-          <p class="extrait-note">
-            Un fragment du prologue qui restera toujours présent ici.
-          </p>
-        </div>
+        <div class="extrait-separator"></div>
+
+        <p class="extrait-reference">
+          <strong>Prologue</strong>
+          La dernière danse
+        </p>
       </article>
 
-      <!-- EXTRAIT ÉVOLUTIF -->
+      <!-- EXTRAIT 2 : À FAIRE ÉVOLUER AU FIL DU TEMPS -->
       <article class="extrait-card">
-        <div>
-          <p class="extrait-reference">
-            Extrait évolutif<br>
-            Partie II · Sortir de l’ombre<br>
-            Chapitre V · Reprendre le fil de ma vie
-          </p>
+        <p class="extrait-label">Un passage du récit</p>
 
-          <blockquote>
-            « La vie, elle, continuait. Et il fallait bien que je
-            continue avec elle. »
-          </blockquote>
-        </div>
+        <blockquote>
+          « La vie, elle, continuait. Et il fallait bien que je continue
+          avec elle. »
+        </blockquote>
 
-        <div>
-          <div class="extrait-separator"></div>
-          <p class="extrait-note">
-            Un passage sur la reconstruction et le choix de continuer
-            à avancer, même lorsque tout n’est pas encore réparé.
-          </p>
-        </div>
+        <div class="extrait-separator"></div>
+
+        <p class="extrait-reference">
+          <strong>Partie II — Sortir de l’ombre</strong>
+          Chapitre V : Reprendre le fil de ma vie
+        </p>
       </article>
 
     </section>
 
-    <section class="extraits-cta">
-      <p class="eyebrow">DÉCOUVRIR L'HISTOIRE</p>
+    <p class="extrait-note">
+      Ces extraits ne racontent pas toute l’histoire.
+      Ils en ouvrent simplement une porte.
+    </p>
 
-      <h2>Chaque page a son histoire.</h2>
+    <section class="extraits-cta">
+      <h2>Envie de découvrir la suite ?</h2>
 
       <p>
-        Ces fragments ne sont qu'un aperçu du récit.
-        Découvrez l'univers de <em>Danser avec le diable</em>
-        et le chemin qui se dessine derrière ces mots.
+        <em>Danser avec le diable</em> est un récit personnel
+        sur l’addiction, les blessures, les silences et le chemin
+        parfois fragile vers la reconstruction.
       </p>
 
-      <a class="button" href="livre.html">
-        EXPLORER LE LIVRE <span>↗</span>
+      <a href="livre.html" class="btn">
+        Découvrir le livre
       </a>
     </section>
 
   </main>
 
   <footer class="site-footer">
-    <p>© ROMAIN.R — DANSER AVEC LE DIABLE</p>
-
-    <div class="footer-links">
-      <a href="auteur.html">L'auteur</a>
-      <a href="ressources.html">Ressources</a>
-      <a href="faq.html">FAQ</a>
-      <a href="index.html#contact">Contact</a>
-    </div>
+    <p>© Romain.R — Danser avec le diable</p>
   </footer>
 
   <script src="script.js"></script>
