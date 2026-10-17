@@ -1,52 +1,39 @@
 
 /* ==========================================
    LES FRAGMENTS DU DIABLE
-   Fil rouge continu, sombre et lumineux
+   Une ambiance sombre, un fil de couture
+   et une animation délicate autour d'Hadès
    ========================================== */
 
 :root {
-  --thread-red: #a52630;
-  --thread-glow: #d64a4a;
-  --thread-dim: rgba(140, 27, 36, 0.30);
+  --fragment-red: #84232b;
+  --fragment-red-light: #b84449;
+  --fragment-text: #f1e8dc;
+  --fragment-muted: #b9aaa0;
 }
 
-/* La page sert de support au fil rouge */
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  position: relative;
-  isolation: isolate;
-}
-
-/* Fil rouge en serpentin sur toute la page */
+/* Aucun fil décoratif ne traverse le reste de la page */
 body::before {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  opacity: 0.78;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1600' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='thread' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0%25' stop-color='%23771920' stop-opacity='.25'/%3E%3Cstop offset='35%25' stop-color='%23b52c36' stop-opacity='.9'/%3E%3Cstop offset='50%25' stop-color='%23f06b61' stop-opacity='1'/%3E%3Cstop offset='65%25' stop-color='%23a52630' stop-opacity='.7'/%3E%3Cstop offset='100%25' stop-color='%23771920' stop-opacity='.25'/%3E%3C/linearGradient%3E%3Cfilter id='glow' x='-100%25' y='-20%25' width='300%25' height='140%25'%3E%3CfeGaussianBlur stdDeviation='1.6' result='blur'/%3E%3CfeMerge%3E%3CfeMergeNode in='blur'/%3E%3CfeMergeNode in='SourceGraphic'/%3E%3C/feMerge%3E%3C/filter%3E%3C/defs%3E%3Cpath d='M 5 0 C 2 35 22 45 10 85 S 3 140 24 170 S 75 210 87 250 S 55 310 27 345 S 4 400 15 440 S 80 490 87 530 S 42 590 16 625 S 4 680 32 715 S 82 760 72 805 S 20 860 11 895 S 50 950 78 985 S 93 1040 60 1070 S 8 1115 17 1160 S 70 1205 83 1245 S 53 1300 23 1335 S 5 1390 35 1430 S 79 1480 94 1520 S 75 1570 85 1600' fill='none' stroke='%23771920' stroke-width='3.5' opacity='.35' filter='url(%23glow)'/%3E%3Cpath d='M 5 0 C 2 35 22 45 10 85 S 3 140 24 170 S 75 210 87 250 S 55 310 27 345 S 4 400 15 440 S 80 490 87 530 S 42 590 16 625 S 4 680 32 715 S 82 760 72 805 S 20 860 11 895 S 50 950 78 985 S 93 1040 60 1070 S 8 1115 17 1160 S 70 1205 83 1245 S 53 1300 23 1335 S 5 1390 35 1430 S 79 1480 94 1520 S 75 1570 85 1600' fill='none' stroke='url(%23thread)' stroke-width='1.4' stroke-linecap='round' stroke-dasharray='9 5'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-size: 100% 100%;
-  animation: thread-light 7s ease-in-out infinite;
+  content: none !important;
 }
 
-/* Les sections conservent leur style existant */
+/* ==========================================
+   SECTION DES FRAGMENTS
+   ========================================== */
+
 .fragments-section {
   position: relative;
+  isolation: isolate;
   overflow: hidden;
   padding: 80px 20px;
   background:
-    radial-gradient(ellipse at 50% 0%, rgba(112, 25, 25, 0.18), transparent 65%),
+    radial-gradient(
+      ellipse at 75% 40%,
+      rgba(95, 32, 29, 0.12),
+      transparent 55%
+    ),
     #100d0c;
-  color: #f1e8dc;
+  color: var(--fragment-text);
 }
 
 .fragments-container {
@@ -56,6 +43,7 @@ body::before {
 }
 
 .fragments-heading {
+  position: relative;
   margin-bottom: 42px;
   text-align: center;
 }
@@ -75,39 +63,70 @@ body::before {
 }
 
 .fragments-heading p {
-  color: #b9aaa0;
+  color: var(--fragment-muted);
   line-height: 1.8;
 }
 
+/* ==========================================
+   ILLUSTRATION D'HADÈS
+   Le fil reste limité à cette scène
+   ========================================== */
+
 .fragments-scene {
   position: relative;
+  isolation: isolate;
   min-height: 300px;
   margin-bottom: 34px;
   overflow: hidden;
-  border: 1px solid rgba(196, 123, 105, 0.28);
+  border: 1px solid rgba(196, 123, 105, 0.22);
   background:
-    linear-gradient(0deg, rgba(12, 9, 8, 0.4), rgba(12, 9, 8, 0.05)),
+    linear-gradient(
+      0deg,
+      rgba(12, 9, 8, 0.25),
+      rgba(12, 9, 8, 0.02)
+    ),
     url("hades-fragments.png") center 43% / cover no-repeat,
     #17100e;
 }
 
+/* Tracé fin et courbe, comme un fil de couture.
+   Il n'empiète pas sur les extraits sous l'image. */
+.fragments-scene::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.58;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 300' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='thread' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0%25' stop-color='%23751d26' stop-opacity='.12'/%3E%3Cstop offset='48%25' stop-color='%23a52e38' stop-opacity='.9'/%3E%3Cstop offset='65%25' stop-color='%23c04a4b' stop-opacity='.65'/%3E%3Cstop offset='100%25' stop-color='%23751d26' stop-opacity='.2'/%3E%3C/linearGradient%3E%3Cfilter id='soft' x='-30%25' y='-30%25' width='160%25' height='160%25'%3E%3CfeGaussianBlur stdDeviation='1.5'/%3E%3C/filter%3E%3C/defs%3E%3Cpath d='M 0 235 C 120 215 155 285 280 240 S 420 180 520 215 S 670 260 750 195 S 880 115 1000 155' fill='none' stroke='%23a52e38' stroke-width='3' opacity='.35' filter='url(%23soft)'/%3E%3Cpath d='M 0 235 C 120 215 155 285 280 240 S 420 180 520 215 S 670 260 750 195 S 880 115 1000 155' fill='none' stroke='url(%23thread)' stroke-width='1.15' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  animation: hades-thread-glow 5s ease-in-out infinite;
+}
+
+/* Légère variation de lumière, sans mouvement agressif */
 .fragments-scene::after {
   content: "";
   position: absolute;
+  z-index: 1;
   inset: 0;
   pointer-events: none;
   background: linear-gradient(
     90deg,
-    rgba(12, 9, 8, 0.28),
-    transparent 65%
+    rgba(12, 9, 8, 0.14),
+    transparent 55%,
+    rgba(12, 9, 8, 0.08)
   );
 }
 
-/* Ancien fil local : on le masque, car le fil principal
-   doit désormais accompagner toute la page. */
+/* L'ancien trait vertical est supprimé */
 .fragments-thread {
-  display: none;
+  display: none !important;
 }
+
+/* ==========================================
+   CARTES DES EXTRAITS
+   ========================================== */
 
 .fragments-cards {
   display: grid;
@@ -118,11 +137,11 @@ body::before {
 .fragment-card {
   position: relative;
   padding: 30px;
-  border: 1px solid rgba(196, 123, 105, 0.32);
+  border: 1px solid rgba(196, 123, 105, 0.28);
   background: linear-gradient(
     145deg,
-    rgba(35, 25, 23, 0.96),
-    rgba(18, 14, 13, 0.98)
+    rgba(35, 25, 23, 0.97),
+    rgba(18, 14, 13, 0.99)
   );
   box-shadow: 0 14px 35px rgba(0, 0, 0, 0.2);
   transition:
@@ -132,9 +151,9 @@ body::before {
 }
 
 .fragment-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(211, 75, 75, 0.65);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.32);
+  transform: translateY(-3px);
+  border-color: rgba(160, 57, 62, 0.5);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
 }
 
 .fragment-label {
@@ -148,7 +167,7 @@ body::before {
 
 .fragment-card blockquote {
   margin: 0;
-  color: #f0e4d8;
+  color: var(--fragment-text);
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: clamp(1.35rem, 2.5vw, 1.8rem);
   font-style: italic;
@@ -157,29 +176,32 @@ body::before {
 
 .fragment-note {
   margin-top: 20px;
-  color: #a99a90;
+  color: var(--fragment-muted);
   font-size: 0.85rem;
   line-height: 1.7;
 }
 
-@keyframes thread-light {
+/* ==========================================
+   ANIMATION
+   ========================================== */
+
+@keyframes hades-thread-glow {
   0%, 100% {
-    opacity: 0.48;
+    opacity: 0.38;
     filter: brightness(0.8);
   }
 
   50% {
-    opacity: 0.95;
-    filter: brightness(1.3);
+    opacity: 0.72;
+    filter: brightness(1.12);
   }
 }
 
-@media (max-width: 700px) {
-  body::before {
-    opacity: 0.55;
-    background-size: 100% 100%;
-  }
+/* ==========================================
+   ADAPTATION AUX TÉLÉPHONES
+   ========================================== */
 
+@media (max-width: 700px) {
   .fragments-section {
     padding: 58px 16px;
   }
@@ -187,6 +209,11 @@ body::before {
   .fragments-scene {
     min-height: 230px;
     background-position: 55% center;
+  }
+
+  .fragments-scene::before {
+    opacity: 0.48;
+    animation-duration: 6s;
   }
 
   .fragments-cards {
@@ -199,12 +226,9 @@ body::before {
   }
 }
 
+/* Respect des préférences de mouvement réduit */
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  body::before {
+  .fragments-scene::before {
     animation: none;
   }
 
