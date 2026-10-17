@@ -16,13 +16,13 @@
   <link rel="stylesheet" href="fragments.css">
 
   <style>
-    /* Illustrations cliquables de la page d'accueil */
+    /* IMAGES CLIQUABLES */
     .home-image-link {
       display: block;
       width: 100%;
-      text-decoration: none;
-      line-height: 0;
       overflow: hidden;
+      line-height: 0;
+      text-decoration: none;
       border: 1px solid rgba(179, 74, 67, 0.38);
       background: #100d0c;
       transition: border-color 0.3s ease, transform 0.3s ease;
@@ -40,20 +40,20 @@
       margin: 0;
     }
 
-    /* Grande illustration des extraits */
-    .excerpts-preview {
+    /* FRAGMENTS : IMAGE SEULE */
+    .fragments-image-only {
       width: min(1050px, 86%);
-      margin: 45px auto;
+      margin: 65px auto;
     }
 
-    /* Cartes auteur et FAQ côte à côte */
+    /* AUTEUR ET FAQ */
     .home-cards {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: clamp(18px, 4vw, 42px);
+      align-items: start;
+      gap: clamp(20px, 4vw, 42px);
       width: min(1050px, 86%);
       margin: 75px auto;
-      align-items: start;
     }
 
     .home-card {
@@ -66,7 +66,7 @@
       object-fit: contain;
     }
 
-    /* Boutique avec couverture du livre */
+    /* BOUTIQUE */
     .shop-preview {
       padding: 75px 7%;
       background:
@@ -79,18 +79,22 @@
     }
 
     .shop-preview-inner {
-      width: min(1000px, 100%);
-      margin: 0 auto;
       display: grid;
       grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
       align-items: center;
       gap: clamp(30px, 6vw, 75px);
+      width: min(1000px, 100%);
+      margin: 0 auto;
     }
 
     .shop-book {
+      display: block;
       width: 100%;
       max-width: 310px;
       margin: 0 auto;
+      border: 0;
+      background: transparent;
+      line-height: 0;
     }
 
     .shop-book img {
@@ -109,8 +113,8 @@
     }
 
     .shop-copy p:not(.eyebrow) {
-      line-height: 1.9;
       margin: 20px 0 28px;
+      line-height: 1.9;
     }
 
     .shop-copy .eyebrow {
@@ -118,16 +122,28 @@
       letter-spacing: 0.16em;
     }
 
+    /* ADAPTATION MOBILE */
     @media (max-width: 700px) {
-      .excerpts-preview {
+      .fragments-image-only {
         width: 90%;
-        margin: 30px auto;
+        margin: 35px auto;
       }
 
       .home-cards {
+        grid-template-columns: 1fr;
+        gap: 30px;
         width: 90%;
-        gap: 14px;
         margin: 45px auto;
+      }
+
+      .home-card {
+        width: 100%;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .home-card .home-image-link {
+        width: 100%;
       }
 
       .shop-preview {
@@ -143,15 +159,12 @@
       .shop-book {
         max-width: 220px;
       }
-
-      .shop-copy .button {
-        display: inline-block;
-      }
     }
   </style>
 </head>
 
 <body>
+  <!-- MENU -->
   <header class="site-header">
     <a class="logo" href="#accueil">ROMAIN<span>.R</span></a>
 
@@ -204,7 +217,7 @@
       </span>
     </section>
 
-    <!-- PRÉSENTATION DU LIVRE -->
+    <!-- LE LIVRE -->
     <section class="book-section section" id="livre">
       <div class="section-heading">
         <p class="eyebrow">AU CŒUR DU RÉCIT</p>
@@ -222,7 +235,9 @@
 
         <div class="book-copy">
           <p class="eyebrow">LE TÉMOIGNAGE</p>
+
           <h3>Danser avec<br>le diable</h3>
+
           <p class="book-subtitle">Ma valse entre addiction et chemsex</p>
 
           <p>
@@ -261,31 +276,20 @@
       </div>
     </section>
 
-    <!-- EXTRAITS : UNE IMAGE CLIQUABLE, SANS TEXTE AUTOUR -->
+    <!-- FRAGMENTS : UNIQUEMENT L'IMAGE CLIQUABLE -->
     <section class="fragments-section" id="extraits">
-      <div class="fragments-container">
-        <div class="fragments-heading">
-          <p class="eyebrow">DES MOTS ÉCHAPPÉS DE L'OMBRE</p>
-          <h2>Les fragments <em>du diable.</em></h2>
-          <p>
-            Quelques morceaux de mon histoire.
-            Des mots extraits du manuscrit, entre ombre et lumière.
-          </p>
-        </div>
-
-        <div class="excerpts-preview">
-          <a
-            class="home-image-link"
-            href="extraits.html"
-            aria-label="Découvrir les extraits du livre"
+      <div class="fragments-image-only">
+        <a
+          class="home-image-link"
+          href="extraits.html"
+          aria-label="Découvrir les extraits du livre"
+        >
+          <img
+            src="extraits-accueil.png"
+            alt="Illustration cliquable vers les extraits de Danser avec le diable"
+            loading="lazy"
           >
-            <img
-              src="extraits-accueil.png"
-              alt="Découvrir les extraits de Danser avec le diable"
-              loading="lazy"
-            >
-          </a>
-        </div>
+        </a>
       </div>
     </section>
 
@@ -301,8 +305,8 @@
       <span class="quote-line"></span>
     </section>
 
-    <!-- AUTEUR ET FAQ : DEUX IMAGES CÔTE À CÔTE -->
-    <section class="home-cards" aria-label="Découvrir le site">
+    <!-- AUTEUR ET FAQ : DEUX IMAGES SANS TEXTE AUTOUR -->
+    <section class="home-cards" aria-label="Découvrir l'auteur et la FAQ">
       <div class="home-card">
         <a
           class="home-image-link"
@@ -321,11 +325,11 @@
         <a
           class="home-image-link"
           href="faq.html"
-          aria-label="Consulter la foire aux questions"
+          aria-label="Accéder à la foire aux questions"
         >
           <img
-            src="FAQ-accueil.png"
-            alt="Foire aux questions"
+            src="faq-accueil.png"
+            alt="Accéder à la foire aux questions"
             loading="lazy"
           >
         </a>
@@ -354,7 +358,7 @@
       </a>
     </section>
 
-    <!-- BOUTIQUE : COUVERTURE DU LIVRE ET MESSAGE -->
+    <!-- BOUTIQUE : COUVERTURE ET MESSAGE -->
     <section class="shop-preview" id="boutique">
       <div class="shop-preview-inner">
         <a
@@ -364,7 +368,7 @@
         >
           <img
             src="couverture-livre.png"
-            alt="Danser avec le diable — couverture du livre"
+            alt="Couverture de Danser avec le diable"
             loading="lazy"
           >
         </a>
