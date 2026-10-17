@@ -4,8 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Découvrez Danser avec le diable — Ma valse entre addiction et chemsex, le témoignage de Romain.R. Sortie prévisionnelle début 2027.">
+  <meta name="description" content="Découvrez Danser avec le diable — Ma valse entre addiction et chemsex, le récit autobiographique de Romain.R. Sortie prévisionnelle début 2027.">
   <meta name="theme-color" content="#100d0c">
+
   <title>Danser avec le diable — Romain.R</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,28 +15,145 @@
 
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="fragments.css">
+
+  <style>
+    /* ================================
+       ENCADRÉ DE PRÉSENTATION DE L'AUTEUR
+    ================================= */
+
+    .author-preview {
+      position: relative;
+      padding: 95px 7%;
+      overflow: hidden;
+      background:
+        radial-gradient(
+          ellipse at 15% 50%,
+          rgba(142, 41, 37, 0.13),
+          transparent 55%
+        ),
+        #100d0c;
+    }
+
+    .author-preview-container {
+      width: min(1050px, 100%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+      align-items: center;
+      gap: clamp(30px, 6vw, 75px);
+    }
+
+    .author-preview-photo {
+      position: relative;
+      width: 100%;
+      max-width: 360px;
+      aspect-ratio: 4 / 5;
+      margin: 0 auto;
+      overflow: hidden;
+      border: 1px solid rgba(179, 74, 67, 0.4);
+      background: #211715;
+      box-shadow: 0 20px 55px rgba(0, 0, 0, 0.3);
+    }
+
+    .author-preview-photo::after {
+      content: "";
+      position: absolute;
+      inset: 11px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      pointer-events: none;
+    }
+
+    .author-preview-photo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .author-preview-copy {
+      min-width: 0;
+    }
+
+    .author-preview-copy h2 {
+      margin: 18px 0 25px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 500;
+      line-height: 1.05;
+    }
+
+    .author-preview-copy h2 em {
+      color: #b34a43;
+      font-weight: 400;
+    }
+
+    .author-preview-copy > p:not(.eyebrow) {
+      margin-bottom: 18px;
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 0.95rem;
+      line-height: 1.9;
+    }
+
+    .author-preview-copy .button {
+      display: inline-block;
+      margin-top: 12px;
+    }
+
+    @media (max-width: 700px) {
+      .author-preview {
+        padding: 75px 8%;
+      }
+
+      .author-preview-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .author-preview-photo {
+        width: min(100%, 320px);
+      }
+
+      .author-preview-copy h2 {
+        font-size: clamp(2.5rem, 10vw, 3.4rem);
+      }
+    }
+  </style>
 </head>
 
 <body>
+
+  <!-- NAVIGATION PRINCIPALE -->
+
   <header class="site-header">
     <a class="logo" href="#accueil">ROMAIN<span>.R</span></a>
 
-    <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+    <button
+      class="menu-toggle"
+      aria-label="Ouvrir le menu"
+      aria-expanded="false"
+      aria-controls="navigation"
+      type="button"
+    >
       ☰
     </button>
 
     <nav class="navigation" id="navigation">
       <a href="#accueil">Accueil</a>
       <a href="livre.html">Le livre</a>
+      <a href="auteur.html">L'auteur</a>
       <a href="#a-propos">À propos</a>
       <a href="#extraits">Extraits</a>
-      <a href="#faq">FAQ</a>
       <a href="ressources.html">Ressources</a>
+      <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <main>
+
+    <!-- HERO : PRÉSENTATION DU LIVRE -->
+
     <section class="hero" id="accueil">
       <div class="hero-overlay"></div>
 
@@ -59,6 +177,8 @@
 
       <span class="vertical-note">UNE HISTOIRE VÉCUE · UNE VOIX LIBRE</span>
     </section>
+
+    <!-- PRÉSENTATION DU LIVRE -->
 
     <section class="book-section section" id="livre">
       <div class="section-heading">
@@ -121,6 +241,7 @@
     </section>
 
     <!-- LES FRAGMENTS DU DIABLE -->
+
     <section class="fragments-section" id="extraits">
       <div class="fragments-container">
 
@@ -187,7 +308,8 @@
 
       </div>
     </section>
-    <!-- FIN DES FRAGMENTS DU DIABLE -->
+
+    <!-- CITATION -->
 
     <section class="quote-section">
       <p class="eyebrow">ENTRE LES OMBRES ET LA LUMIÈRE</p>
@@ -199,6 +321,8 @@
 
       <span class="quote-line"></span>
     </section>
+
+    <!-- À PROPOS DU PROJET -->
 
     <section class="about-section section" id="a-propos">
       <p class="eyebrow">DERRIÈRE LES MOTS</p>
@@ -224,6 +348,48 @@
         </p>
       </div>
     </section>
+
+    <!-- NOUVEL ENCADRÉ : DÉCOUVRIR L'AUTEUR -->
+
+    <section class="author-preview" aria-labelledby="author-preview-title">
+      <div class="author-preview-container">
+
+        <div class="author-preview-photo">
+          <img
+            src="portrait-romain.jpg"
+            alt="Portrait de Romain.R, auteur de Danser avec le diable"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="author-preview-copy">
+          <p class="eyebrow">DERRIÈRE LE LIVRE</p>
+
+          <h2 id="author-preview-title">
+            Derrière le livre,<br>
+            <em>il y a un homme.</em>
+          </h2>
+
+          <p>
+            Je m'appelle Romain. J'ai choisi de raconter mon histoire,
+            avec ses ombres, ses contradictions et ma volonté d'avancer.
+          </p>
+
+          <p>
+            Je ne prétends pas avoir toutes les réponses. Je souhaite
+            simplement partager mon expérience, sans jugement, et mettre
+            des mots sur ce que j'ai traversé.
+          </p>
+
+          <a class="button" href="auteur.html">
+            DÉCOUVRIR L'AUTEUR <span>↗</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FAQ -->
 
     <section class="faq-section section" id="faq">
       <p class="eyebrow">VOUS VOUS POSEZ DES QUESTIONS</p>
@@ -264,23 +430,7 @@
       </details>
     </section>
 
-    <!-- ACCÈS AUX RESSOURCES D'AIDE ET DE PRÉVENTION -->
-    <section class="faq-section section support-section" id="appel-ressources">
-      <p class="eyebrow">ÉCOUTE · SOUTIEN · ACCOMPAGNEMENT</p>
-
-      <h2>Vous n'avez pas à<br><em>traverser ça seul.</em></h2>
-
-      <p>
-        Si certains passages de mon histoire font écho à la vôtre,
-        des associations et des services peuvent vous écouter,
-        vous informer et vous accompagner, sans jugement.
-      </p>
-
-      <a class="button" href="ressources.html">
-        DÉCOUVRIR LES RESSOURCES <span>↗</span>
-      </a>
-    </section>
-    <!-- FIN DE L'ACCÈS AUX RESSOURCES -->
+    <!-- RESSOURCES ET CONTACT -->
 
     <section class="contact-section section" id="contact">
       <p class="eyebrow">RESTONS EN CONTACT</p>
@@ -296,13 +446,18 @@
         ME CONTACTER <span>↗</span>
       </a>
     </section>
+
   </main>
+
+  <!-- PIED DE PAGE -->
 
   <footer>
     <a class="logo" href="#accueil">ROMAIN<span>.R</span></a>
 
     <p>© 2026 Romain.R — <em>Danser avec le diable</em></p>
 
+    <a href="auteur.html">DÉCOUVRIR L'AUTEUR ↗</a>
+    <a href="ressources.html">RESSOURCES</a>
     <a href="#accueil">RETOUR EN HAUT ↑</a>
   </footer>
 
