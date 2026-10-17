@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Découvrez Danser avec le diable — Ma valse entre addiction et chemsex, le témoignage de Romain.R. Sortie prévisionnelle début 2027.">
+  <meta name="description" content="Découvrez Danser avec le diable — Ma valse entre addiction et chemsex, le récit autobiographique de Romain.R. Sortie prévisionnelle début 2027.">
   <meta name="theme-color" content="#100d0c">
   <title>Danser avec le diable — Romain.R</title>
 
@@ -14,22 +14,139 @@
 
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="fragments.css">
+
+  <style>
+    .preview-section {
+      position: relative;
+      padding: 85px 7%;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 80% 50%, rgba(142,41,37,.13), transparent 60%),
+        #100d0c;
+    }
+
+    .preview-container {
+      width: min(1050px, 100%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0,.85fr) minmax(0,1.15fr);
+      align-items: center;
+      gap: clamp(30px,6vw,75px);
+    }
+
+    .preview-image {
+      position: relative;
+      width: 100%;
+      max-width: 360px;
+      aspect-ratio: 4 / 5;
+      margin: 0 auto;
+      overflow: hidden;
+      border: 1px solid rgba(179,74,67,.4);
+      background: #1b1312;
+      box-shadow: 0 20px 55px rgba(0,0,0,.3);
+    }
+
+    .preview-image::after {
+      content: "";
+      position: absolute;
+      inset: 11px;
+      border: 1px solid rgba(255,255,255,.15);
+      pointer-events: none;
+    }
+
+    .preview-image img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .preview-copy {
+      min-width: 0;
+    }
+
+    .preview-copy h2 {
+      margin: 18px 0 25px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2.5rem,5vw,4rem);
+      font-weight: 500;
+      line-height: 1.05;
+    }
+
+    .preview-copy h2 em {
+      color: #b34a43;
+      font-weight: 400;
+    }
+
+    .preview-copy > p:not(.eyebrow) {
+      margin-bottom: 18px;
+      color: rgba(255,255,255,.76);
+      font-size: .95rem;
+      line-height: 1.9;
+    }
+
+    .preview-copy .button {
+      display: inline-block;
+      margin-top: 12px;
+    }
+
+    .shop-preview {
+      background:
+        radial-gradient(ellipse at 15% 50%, rgba(142,41,37,.16), transparent 55%),
+        #0c0a09;
+    }
+
+    @media (max-width: 700px) {
+      .preview-section {
+        padding: 70px 8%;
+      }
+
+      .preview-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .preview-image {
+        width: min(100%,320px);
+      }
+
+      .preview-copy h2 {
+        font-size: clamp(2.5rem,10vw,3.4rem);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .preview-section *,
+      .preview-section *::before,
+      .preview-section *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
   <header class="site-header">
     <a class="logo" href="#accueil">ROMAIN<span>.R</span></a>
 
-    <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+    <button
+      class="menu-toggle"
+      aria-label="Ouvrir le menu"
+      aria-expanded="false"
+      aria-controls="navigation"
+      type="button"
+    >
       ☰
     </button>
 
     <nav class="navigation" id="navigation">
       <a href="#accueil">Accueil</a>
       <a href="livre.html">Le livre</a>
-      <a href="#a-propos">À propos</a>
-      <a href="#extraits">Extraits</a>
-      <a href="#faq">FAQ</a>
+      <a href="auteur.html">L'auteur</a>
+      <a href="extraits.html">Extraits</a>
+      <a href="faq.html">FAQ</a>
       <a href="ressources.html">Ressources</a>
       <a href="boutique.html">Boutique</a>
       <a href="#contact">Contact</a>
@@ -37,6 +154,7 @@
   </header>
 
   <main>
+    <!-- ACCUEIL -->
     <section class="hero" id="accueil">
       <div class="hero-overlay"></div>
 
@@ -61,12 +179,11 @@
       <span class="vertical-note">UNE HISTOIRE VÉCUE · UNE VOIX LIBRE</span>
     </section>
 
+    <!-- PRÉSENTATION DU LIVRE -->
     <section class="book-section section" id="livre">
       <div class="section-heading">
         <p class="eyebrow">AU CŒUR DU RÉCIT</p>
-
         <h2>Un livre. <em>Une vérité.</em></h2>
-
         <p>Mettre des mots sur l'indicible. Regarder les ombres en face.</p>
       </div>
 
@@ -80,9 +197,7 @@
 
         <div class="book-copy">
           <p class="eyebrow">LE TÉMOIGNAGE</p>
-
           <h3>Danser avec<br>le diable</h3>
-
           <p class="book-subtitle">Ma valse entre addiction et chemsex</p>
 
           <p>
@@ -121,15 +236,48 @@
       </div>
     </section>
 
-    <!-- LES FRAGMENTS DU DIABLE -->
+    <!-- ENCADRÉ FAQ ILLUSTRÉ -->
+    <section class="preview-section" aria-labelledby="faq-preview-title">
+      <div class="preview-container">
+        <div class="preview-image">
+          <img
+            src="faq.jpg"
+            alt="Illustration de livres et d'un carnet pour la foire aux questions"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="preview-copy">
+          <p class="eyebrow">FAQ</p>
+          <h2 id="faq-preview-title">
+            Des questions<br>
+            <em>sur le livre ?</em>
+          </h2>
+
+          <p>
+            Publication, contenu, formats, témoignage...
+            J'ai rassemblé ici les réponses aux questions
+            les plus fréquentes.
+          </p>
+
+          <p>
+            Si tu ne trouves pas ta réponse, tu peux aussi
+            me contacter directement.
+          </p>
+
+          <a class="button" href="faq.html">
+            CONSULTER LA FAQ <span>↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FRAGMENTS DU DIABLE -->
     <section class="fragments-section" id="extraits">
       <div class="fragments-container">
-
         <div class="fragments-heading">
           <p class="eyebrow">DES MOTS ÉCHAPPÉS DE L'OMBRE</p>
-
           <h2>Les fragments <em>du diable.</em></h2>
-
           <p>
             Quelques morceaux de mon histoire.
             Des mots extraits du manuscrit, entre ombre et lumière.
@@ -145,15 +293,12 @@
         </div>
 
         <div class="fragments-cards">
-
           <article class="fragment-card">
             <span class="fragment-label">Le fragment permanent</span>
-
             <blockquote>
               « Mon diable n’avait pas de visage.
               Il savait simplement attendre. »
             </blockquote>
-
             <p class="fragment-note">
               Certains mots restent. Celui-ci ne disparaîtra pas.
             </p>
@@ -161,18 +306,15 @@
 
           <article class="fragment-card">
             <span class="fragment-label">Le fragment de la semaine</span>
-
             <blockquote>
               « Je ne savais pas encore que certaines choses qui nous
               donnent l’impression de voler peuvent aussi nous apprendre
               à tomber. »
             </blockquote>
-
             <p class="fragment-note">
               Un passage du manuscrit, renouvelé au fil des semaines.
             </p>
           </article>
-
         </div>
 
         <div class="fragments-heading">
@@ -181,118 +323,103 @@
             D'autres mots trouveront leur place ici, au fil du temps.
           </p>
 
-          <a class="button" href="livre.html">
-            ENTRER DANS LE LIVRE <span>↗</span>
+          <a class="button" href="extraits.html">
+            DÉCOUVRIR LES EXTRAITS <span>↗</span>
           </a>
         </div>
-
       </div>
     </section>
-    <!-- FIN DES FRAGMENTS DU DIABLE -->
 
+    <!-- CITATION -->
     <section class="quote-section">
       <p class="eyebrow">ENTRE LES OMBRES ET LA LUMIÈRE</p>
-
       <blockquote>
         « On ne choisit pas toujours ce qui nous brise.
         Mais, parfois, on peut choisir ce que l'on fait des morceaux. »
       </blockquote>
-
       <span class="quote-line"></span>
     </section>
 
-    <section class="about-section section" id="a-propos">
-      <p class="eyebrow">DERRIÈRE LES MOTS</p>
+    <!-- PRÉSENTATION DE L'AUTEUR -->
+    <section class="preview-section" aria-labelledby="author-preview-title">
+      <div class="preview-container">
+        <div class="preview-image">
+          <img
+            src="portrait-romain.jpg"
+            alt="Portrait de Romain.R, auteur de Danser avec le diable"
+            loading="lazy"
+          >
+        </div>
 
-      <h2>Écrire pour<br><em>ne plus se taire.</em></h2>
+        <div class="preview-copy">
+          <p class="eyebrow">DERRIÈRE LE LIVRE</p>
+          <h2 id="author-preview-title">
+            Derrière le livre,<br>
+            <em>il y a un homme.</em>
+          </h2>
 
-      <div class="about-copy">
-        <p>
-          Je suis Romain.R. J'ai longtemps cherché comment raconter
-          ce qui se passait à l'intérieur, comment donner du sens
-          à des expériences qui m'avaient laissé des traces.
-        </p>
+          <p>
+            Je m'appelle Romain. J'ai choisi de raconter mon histoire,
+            avec ses ombres, ses contradictions et ma volonté d'avancer.
+          </p>
 
-        <p>
-          Écrire ce livre, c'est revenir sur mon histoire sans prétendre
-          l'effacer. C'est accepter les contradictions, les fragilités
-          et le chemin qu'il reste à parcourir.
-        </p>
+          <p>
+            Je ne prétends pas avoir toutes les réponses. Je souhaite
+            simplement partager mon expérience, sans jugement, et mettre
+            des mots sur ce que j'ai traversé.
+          </p>
 
-        <p>
-          Ce récit est le mien. Peut-être qu'en le lisant,
-          quelqu'un se sentira un peu moins seul.
-        </p>
+          <a class="button" href="auteur.html">
+            DÉCOUVRIR L'AUTEUR <span>↗</span>
+          </a>
+        </div>
       </div>
     </section>
 
-    <section class="faq-section section" id="faq">
-      <p class="eyebrow">VOUS VOUS POSEZ DES QUESTIONS</p>
+    <!-- ACCÈS À LA BOUTIQUE -->
+    <section class="preview-section shop-preview" aria-labelledby="shop-preview-title">
+      <div class="preview-container">
+        <div class="preview-image">
+          <img
+            src="couverture-livre.png"
+            alt="Couverture de Danser avec le diable, au cœur de son univers"
+            loading="lazy"
+          >
+        </div>
 
-      <h2>Quelques <em>réponses.</em></h2>
+        <div class="preview-copy">
+          <p class="eyebrow">PROLONGER L'UNIVERS DU LIVRE</p>
+          <h2 id="shop-preview-title">
+            La boutique<br>
+            <em>se prépare.</em>
+          </h2>
 
-      <details>
-        <summary>De quoi parle le livre ?</summary>
-        <p>
-          D'un parcours autobiographique autour de l'addiction,
-          du chemsex et de blessures personnelles.
-        </p>
-      </details>
+          <p>
+            Le livre ouvre la voie. Son univers se prolongera aussi
+            à travers des marque-pages, des illustrations et quelques
+            objets imaginés au fil du projet.
+          </p>
 
-      <details>
-        <summary>Quand sera-t-il disponible ?</summary>
-        <p>
-          La sortie est prévue début 2027, sous réserve de finalisation
-          du manuscrit et de la préparation de la publication.
-          Les informations définitives seront communiquées sur ce site.
-        </p>
-      </details>
+          <p>
+            Pour le moment, la boutique se prépare doucement,
+            comme le livre lui-même.
+          </p>
 
-      <details>
-        <summary>Le livre sera-t-il disponible en papier et en numérique ?</summary>
-        <p>
-          Plusieurs formats sont envisagés. Les détails seront précisés
-          à l'approche de la sortie.
-        </p>
-      </details>
-
-      <details>
-        <summary>Est-ce une histoire vraie ?</summary>
-        <p>
-          Oui. Il s'agit d'un récit autobiographique raconté à la première
-          personne.
-        </p>
-      </details>
+          <a class="button" href="boutique.html">
+            DÉCOUVRIR LA BOUTIQUE <span>↗</span>
+          </a>
+        </div>
+      </div>
     </section>
 
-    <!-- ACCÈS AUX RESSOURCES D'AIDE ET DE PRÉVENTION -->
-    <section class="faq-section section support-section" id="appel-ressources">
-      <p class="eyebrow">ÉCOUTE · SOUTIEN · ACCOMPAGNEMENT</p>
-
-      <h2>Vous n'avez pas à<br><em>traverser ça seul.</em></h2>
-
-      <p>
-        Si certains passages de mon histoire font écho à la vôtre,
-        des associations et des services peuvent vous écouter,
-        vous informer et vous accompagner, sans jugement.
-      </p>
-
-      <a class="button" href="ressources.html">
-        DÉCOUVRIR LES RESSOURCES <span>↗</span>
-      </a>
-    </section>
-    <!-- FIN DE L'ACCÈS AUX RESSOURCES -->
-
+    <!-- CONTACT -->
     <section class="contact-section section" id="contact">
       <p class="eyebrow">RESTONS EN CONTACT</p>
-
       <h2>La suite s'écrit <em>bientôt.</em></h2>
-
       <p>
         Merci de faire une place à cette histoire.
         Les prochaines nouvelles du livre seront partagées ici.
       </p>
-
       <a class="button" href="mailto:contact@romainr.fr">
         ME CONTACTER <span>↗</span>
       </a>
@@ -301,9 +428,7 @@
 
   <footer>
     <a class="logo" href="#accueil">ROMAIN<span>.R</span></a>
-
     <p>© 2026 Romain.R — <em>Danser avec le diable</em></p>
-
     <a href="#accueil">RETOUR EN HAUT ↑</a>
   </footer>
 
