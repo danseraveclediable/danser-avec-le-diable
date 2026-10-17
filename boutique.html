@@ -1,0 +1,541 @@
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#100d0c">
+  <meta name="description" content="Découvrez les éditions et les futurs objets autour de Danser avec le diable, le livre de Romain.R.">
+  <title>La boutique — Danser avec le diable</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="fragments.css">
+
+  <style>
+    html,
+    body {
+      max-width: 100%;
+      overflow-x: clip;
+    }
+
+    .site-header .navigation a {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .boutique-page {
+      min-height: 100vh;
+      padding: 155px 24px 0;
+      background:
+        radial-gradient(
+          ellipse at 50% 8%,
+          rgba(91, 43, 46, 0.22),
+          transparent 55%
+        ),
+        #100d0c;
+    }
+
+    .boutique-intro {
+      max-width: 850px;
+      margin: 0 auto 70px;
+      text-align: center;
+    }
+
+    .boutique-eyebrow {
+      margin: 0 0 14px;
+      color: #c15a5d;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      line-height: 1.8;
+      text-transform: uppercase;
+    }
+
+    .boutique-intro h1 {
+      margin: 0 0 22px;
+      color: #e9dfd0;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(48px, 8vw, 82px);
+      font-weight: 500;
+      line-height: 1;
+    }
+
+    .boutique-intro h1 em {
+      color: #c15a5d;
+      font-weight: 400;
+    }
+
+    .boutique-intro > p:last-child {
+      max-width: 650px;
+      margin: 0 auto;
+      color: #c9beb3;
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .boutique-section {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .boutique-section-title {
+      margin: 0 0 32px;
+      color: #e9dfd0;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(30px, 5vw, 42px);
+      font-weight: 500;
+      text-align: center;
+    }
+
+    .boutique-section-title em {
+      color: #c15a5d;
+      font-weight: 400;
+    }
+
+    .boutique-products {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 30px;
+    }
+
+    .boutique-product {
+      min-width: 0;
+      padding: 25px;
+      border: 1px solid rgba(193, 90, 93, 0.3);
+      background:
+        linear-gradient(
+          145deg,
+          rgba(40, 29, 30, 0.88),
+          rgba(19, 15, 15, 0.97)
+        );
+      transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+    }
+
+    .boutique-product:hover {
+      transform: translateY(-5px);
+      border-color: rgba(193, 90, 93, 0.75);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.22);
+    }
+
+    .boutique-product-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 310px;
+      margin-bottom: 25px;
+      padding: 25px;
+      overflow: hidden;
+      background:
+        radial-gradient(
+          ellipse at center,
+          rgba(91, 43, 46, 0.23),
+          transparent 70%
+        ),
+        #100d0c;
+      border: 1px solid rgba(233, 223, 208, 0.08);
+    }
+
+    .boutique-product-visual img {
+      display: block;
+      width: 100%;
+      max-width: 245px;
+      max-height: 360px;
+      object-fit: contain;
+      filter: drop-shadow(0 15px 20px rgba(0, 0, 0, 0.45));
+      transition: transform 0.4s ease;
+    }
+
+    .boutique-product:hover .boutique-product-visual img {
+      transform: scale(1.025);
+    }
+
+    .boutique-product-visual.digital {
+      position: relative;
+    }
+
+    .digital-device {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: min(100%, 235px);
+      aspect-ratio: 3 / 4;
+      padding: 13px;
+      border: 2px solid #6e5550;
+      border-radius: 15px;
+      background: linear-gradient(145deg, #302322, #0b0909);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .digital-screen {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      padding: 15px;
+      border: 1px solid rgba(193, 90, 93, 0.3);
+      background:
+        radial-gradient(
+          ellipse at 50% 35%,
+          rgba(91, 43, 46, 0.35),
+          transparent 70%
+        ),
+        #100d0c;
+      text-align: center;
+    }
+
+    .digital-screen img {
+      width: 78%;
+      max-height: 72%;
+      margin-bottom: 12px;
+    }
+
+    .digital-screen span {
+      color: #c9beb3;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 8px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .boutique-product-label {
+      display: block;
+      margin-bottom: 10px;
+      color: #c15a5d;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .boutique-product h3 {
+      margin: 0 0 12px;
+      color: #e9dfd0;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 34px;
+      font-weight: 500;
+      line-height: 1.15;
+    }
+
+    .boutique-product > p {
+      margin: 0 0 20px;
+      color: #c9beb3;
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .boutique-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-top: 5px;
+      padding: 10px 13px;
+      border: 1px solid rgba(193, 90, 93, 0.35);
+      color: #e9dfd0;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      line-height: 1.7;
+      text-transform: uppercase;
+    }
+
+    .boutique-status::before {
+      width: 6px;
+      height: 6px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: #c15a5d;
+      content: "";
+    }
+
+    /* FUTURS OBJETS */
+    .boutique-objets {
+      max-width: 1080px;
+      margin: 100px auto 0;
+      padding: 50px 25px;
+      border-top: 1px solid rgba(233, 223, 208, 0.17);
+      border-bottom: 1px solid rgba(233, 223, 208, 0.17);
+      text-align: center;
+    }
+
+    .boutique-objets h2 {
+      margin: 0 0 15px;
+      color: #e9dfd0;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(32px, 5vw, 44px);
+      font-weight: 500;
+    }
+
+    .boutique-objets h2 em {
+      color: #c15a5d;
+      font-weight: 400;
+    }
+
+    .boutique-objets p {
+      max-width: 620px;
+      margin: 0 auto;
+      color: #c9beb3;
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .boutique-thread {
+      width: 55px;
+      height: 1px;
+      margin: 28px auto 0;
+      background: #c15a5d;
+      box-shadow: 0 0 12px rgba(193, 90, 93, 0.5);
+    }
+
+    .boutique-back {
+      padding: 55px 20px 75px;
+      text-align: center;
+    }
+
+    .boutique-back a {
+      color: #c9beb3;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.25s ease;
+    }
+
+    .boutique-back a:hover {
+      color: #c15a5d;
+    }
+
+    .boutique-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px 24px;
+      padding: 28px 7%;
+      border-top: 1px solid rgba(233, 223, 208, 0.2);
+      color: #c9beb3;
+      font-size: 11px;
+    }
+
+    .boutique-footer p {
+      margin: 0;
+    }
+
+    .boutique-footer .footer-link {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .boutique-footer a:hover {
+      color: #c15a5d;
+    }
+
+    @media (max-width: 760px) {
+      .boutique-page {
+        padding: 125px 16px 0;
+      }
+
+      .boutique-intro {
+        margin-bottom: 45px;
+      }
+
+      .boutique-intro > p:last-child {
+        font-size: 13px;
+      }
+
+      .boutique-products {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 22px;
+      }
+
+      .boutique-product {
+        padding: 18px;
+      }
+
+      .boutique-product-visual {
+        min-height: 270px;
+        padding: 20px;
+      }
+
+      .boutique-product-visual img {
+        max-width: 210px;
+        max-height: 320px;
+      }
+
+      .boutique-objets {
+        margin-top: 65px;
+        padding: 40px 8px;
+      }
+
+      .boutique-back {
+        padding: 40px 15px 55px;
+      }
+
+      .boutique-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 25px 22px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .boutique-product,
+      .boutique-product-visual img,
+      .boutique-back a {
+        transition: none;
+      }
+
+      .boutique-product:hover,
+      .boutique-product:hover .boutique-product-visual img {
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html#accueil">ROMAIN<span>.R</span></a>
+
+    <button
+      class="menu-toggle"
+      aria-label="Ouvrir le menu"
+      aria-expanded="false"
+      aria-controls="navigation">
+      ☰
+    </button>
+
+    <nav class="navigation" id="navigation">
+      <a href="index.html#accueil">Accueil</a>
+      <a href="livre.html">Le livre</a>
+      <a href="auteur.html">L'auteur</a>
+      <a href="extraits.html">Extraits</a>
+      <a href="faq.html">FAQ</a>
+      <a href="ressources.html">Ressources</a>
+      <a href="boutique.html" aria-current="page">Boutique</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="boutique-page">
+    <section class="boutique-intro">
+      <p class="boutique-eyebrow">L'UNIVERS DU LIVRE</p>
+
+      <h1>La <em>boutique.</em></h1>
+
+      <p>
+        Un livre né de l'ombre, des mots pour raconter l'indicible.
+        Retrouvez ici les différentes éditions de
+        <em>Danser avec le diable</em>, ainsi que les futurs objets
+        imaginés autour de cette histoire.
+      </p>
+    </section>
+
+    <section class="boutique-section" aria-labelledby="editions-title">
+      <h2 class="boutique-section-title" id="editions-title">
+        Les <em>éditions</em>
+      </h2>
+
+      <div class="boutique-products">
+        <!-- ÉDITION PAPIER -->
+        <article class="boutique-product">
+          <div class="boutique-product-visual">
+            <img
+              src="couverture-livre.png"
+              alt="Couverture de Danser avec le diable"
+              loading="lazy">
+          </div>
+
+          <span class="boutique-product-label">Édition physique</span>
+
+          <h3>L'édition papier</h3>
+
+          <p>
+            Retrouver le récit entre ses mains, tourner les pages,
+            souligner une phrase et prendre le temps de laisser
+            les mots résonner.
+          </p>
+
+          <span class="boutique-status">Disponible prochainement</span>
+        </article>
+
+        <!-- ÉDITION NUMÉRIQUE -->
+        <article class="boutique-product">
+          <div class="boutique-product-visual digital">
+            <div class="digital-device">
+              <div class="digital-screen">
+                <img
+                  src="couverture-livre.png"
+                  alt=""
+                  loading="lazy">
+                <span>Édition numérique</span>
+              </div>
+            </div>
+          </div>
+
+          <span class="boutique-product-label">Lecture numérique</span>
+
+          <h3>L'édition numérique</h3>
+
+          <p>
+            Emporter cette histoire partout avec soi et la découvrir
+            à son rythme, sur une liseuse, une tablette ou un écran.
+          </p>
+
+          <span class="boutique-status">Disponible prochainement</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- ESPACE POUR LES FUTURS OBJETS -->
+    <section class="boutique-objets">
+      <p class="boutique-eyebrow">BIENTÔT DANS CET UNIVERS</p>
+
+      <h2>Bien plus que <em>des pages.</em></h2>
+
+      <p>
+        Des marque-pages, des objets et peut-être d'autres surprises
+        viendront compléter cet espace au fil du projet.
+        Pour le moment, la boutique se prépare doucement,
+        comme le livre lui-même.
+      </p>
+
+      <div class="boutique-thread" aria-hidden="true"></div>
+    </section>
+
+    <div class="boutique-back">
+      <a href="index.html#accueil">← Retour à l'accueil</a>
+    </div>
+  </main>
+
+  <footer class="boutique-footer">
+    <a class="logo" href="index.html#accueil">ROMAIN<span>.R</span></a>
+
+    <p>© 2026 Romain.R — <em>Danser avec le diable</em></p>
+
+    <a class="footer-link" href="livre.html">Découvrir le livre ↗</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+```
