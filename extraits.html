@@ -4,15 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Extraits | Danser avec le diable</title>
-
-  <meta
-    name="description"
-    content="Découvrez deux extraits de Danser avec le diable, le récit autobiographique de Romain.R, entre addiction, blessures et reconstruction."
-  >
-
   <meta name="theme-color" content="#100d0c">
+  <meta name="description" content="Découvrez deux extraits de Danser avec le diable, le récit autobiographique de Romain.R.">
+  <title>Extraits — Danser avec le diable</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,396 +16,223 @@
   <link rel="stylesheet" href="fragments.css">
 
   <style>
-    /* ========================================
-       BASE ET PROTECTION CONTRE LES DÉBORDEMENTS
-    ======================================== */
-
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-    }
-
-    html {
-      width: 100%;
-      max-width: 100%;
-      overflow-x: clip;
-      scroll-behavior: smooth;
-    }
-
+    html,
     body {
       width: 100%;
       max-width: 100%;
-      margin: 0;
       overflow-x: clip;
     }
 
-    img,
-    video,
-    iframe {
-      max-width: 100%;
+    /* MENU IDENTIQUE AUX AUTRES PAGES */
+    .site-header .navigation a {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
     }
 
-    main {
-      width: 100%;
-      max-width: 100%;
-      min-width: 0;
+    /* PAGE EXTRAITS */
+    .extraits-page {
+      min-height: 100vh;
+      padding: 150px 24px 0;
+      background:
+        radial-gradient(
+          ellipse at 50% 10%,
+          rgba(43, 31, 43, 0.65),
+          transparent 60%
+        ),
+        #100d0c;
     }
-
-    main section,
-    main article {
-      min-width: 0;
-    }
-
-    /* ========================================
-       EN-TÊTE
-    ======================================== */
-
-    .site-header {
-      width: 100%;
-      max-width: 100%;
-    }
-
-    .nav-container {
-      width: min(100% - 40px, 1200px);
-      max-width: 100%;
-      margin-inline: auto;
-      min-width: 0;
-    }
-
-    .nav-links a {
-      white-space: normal;
-    }
-
-    @media (min-width: 769px) {
-      .nav-container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 24px;
-      }
-
-      .nav-links {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: flex-end;
-        gap: 10px 18px;
-        min-width: 0;
-      }
-    }
-
-    /* ========================================
-       INTRODUCTION
-    ======================================== */
 
     .extraits-hero {
       width: 100%;
-      max-width: 100%;
-      padding: 90px 24px 45px;
+      max-width: 900px;
+      margin: 0 auto 55px;
       text-align: center;
     }
 
-    .extraits-hero .extrait-label {
-      margin-bottom: 18px;
-      overflow-wrap: anywhere;
+    .extraits-hero .eyebrow {
+      margin-bottom: 10px;
+      color: #c15a5d;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
     }
 
     .extraits-hero h1 {
-      max-width: 100%;
-      margin: 0 0 22px;
-      font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: clamp(2.8rem, 6vw, 4.5rem);
-      line-height: 1.08;
-      overflow-wrap: anywhere;
+      margin: 0 0 18px;
+      color: #e9dfd0;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(48px, 8vw, 76px);
+      font-weight: 500;
+      line-height: 1.05;
     }
 
-    .extraits-intro {
-      width: 100%;
-      max-width: 720px;
+    .extraits-hero > p:last-child {
+      max-width: 650px;
       margin: 0 auto;
-      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: #c9beb3;
+      font-size: 14px;
       line-height: 1.9;
-      opacity: 0.9;
-      overflow-wrap: break-word;
     }
-
-    /* ========================================
-       CARTES DES EXTRAITS
-    ======================================== */
 
     .extraits-cards {
       display: grid;
-      grid-template-columns: minmax(0, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 28px;
-      width: calc(100% - 48px);
-      max-width: 900px;
-      min-width: 0;
-      margin: 30px auto 65px;
+      width: 100%;
+      max-width: 1050px;
+      margin: 0 auto;
     }
 
     .extrait-card {
-      width: 100%;
-      max-width: 100%;
       min-width: 0;
-      padding: clamp(24px, 4vw, 42px);
-      border: 1px solid rgba(190, 70, 55, 0.42);
-      border-radius: 4px;
-      background: rgba(255, 255, 255, 0.025);
-      text-align: center;
-      overflow-wrap: break-word;
+      padding: clamp(24px, 4vw, 44px);
+      border: 1px solid rgba(193, 90, 93, 0.38);
+      background:
+        linear-gradient(
+          145deg,
+          rgba(49, 37, 54, 0.92),
+          rgba(20, 16, 20, 0.98)
+        );
+      box-shadow: 0 18px 55px rgba(0, 0, 0, 0.2);
     }
 
     .extrait-label {
-      margin: 0 0 22px;
-      color: #c66b5b;
-      font-family: "Montserrat", sans-serif;
-      font-size: 0.76rem;
-      letter-spacing: 0.16em;
-      line-height: 1.7;
+      display: block;
+      margin-bottom: 25px;
+      color: #d8b5a7;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      line-height: 1.8;
       text-transform: uppercase;
     }
 
     .extrait-card blockquote {
-      width: 100%;
-      max-width: 720px;
-      margin: 0 auto;
-      font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: clamp(1.65rem, 3.5vw, 2.65rem);
-      font-style: italic;
-      line-height: 1.45;
-      overflow-wrap: break-word;
-      hyphens: auto;
-    }
-
-    .extrait-separator {
-      width: 48px;
-      height: 1px;
-      margin: 28px auto;
-      background: #a84437;
-    }
-
-    .extrait-reference {
       margin: 0;
-      font-size: 0.9rem;
-      line-height: 1.8;
-      opacity: 0.82;
-      overflow-wrap: break-word;
+      color: #e9dfd0;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(25px, 3vw, 37px);
+      font-weight: 400;
+      line-height: 1.35;
+      overflow-wrap: anywhere;
     }
-
-    .extrait-reference strong {
-      display: block;
-      margin-bottom: 5px;
-      font-weight: 600;
-    }
-
-    /* ========================================
-       NOTE DE FIN DES EXTRAITS
-    ======================================== */
 
     .extrait-note {
-      width: calc(100% - 48px);
-      max-width: 650px;
-      margin: 0 auto;
-      text-align: center;
-      line-height: 1.9;
-      opacity: 0.8;
-      overflow-wrap: break-word;
+      margin: 28px 0 0;
+      padding-top: 18px;
+      border-top: 1px solid rgba(233, 223, 208, 0.16);
+      color: #c9beb3;
+      font-size: 12px;
+      line-height: 1.8;
     }
 
-    /* ========================================
-       CONCLUSION ÉDITORIALE
-    ======================================== */
-
+    /* CONCLUSION ET LIEN VERS LE LIVRE */
     .extraits-cta {
-      position: relative;
-      isolation: isolate;
-      width: calc(100% - 48px);
-      max-width: 900px;
-      margin: 75px auto 70px;
-      padding: clamp(32px, 6vw, 68px) clamp(22px, 5vw, 60px);
-      border: 1px solid rgba(190, 70, 55, 0.48);
-      border-radius: 4px;
-      background:
-        linear-gradient(
-          145deg,
-          rgba(130, 45, 35, 0.11),
-          rgba(255, 255, 255, 0.018) 55%,
-          rgba(130, 45, 35, 0.06)
-        );
+      width: 100%;
+      max-width: 760px;
+      margin: 75px auto 0;
+      padding: 38px 24px 65px;
       text-align: center;
-      overflow: hidden;
-    }
-
-    .extraits-cta::before {
-      content: "";
-      display: block;
-      width: 48px;
-      height: 1px;
-      margin: 0 auto 25px;
-      background: #c66b5b;
     }
 
     .extraits-cta h2 {
-      max-width: 100%;
-      margin: 0 auto 22px;
-      font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: clamp(2.1rem, 5vw, 3.6rem);
+      margin: 0 0 14px;
+      color: #e9dfd0;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(30px, 5vw, 43px);
       font-weight: 500;
-      line-height: 1.15;
-      overflow-wrap: break-word;
-      text-wrap: balance;
+      line-height: 1.2;
     }
 
     .extraits-cta p {
-      width: 100%;
-      max-width: 620px;
-      margin: 0 auto 30px;
-      font-size: 1rem;
+      max-width: 580px;
+      margin: 0 auto 25px;
+      color: #c9beb3;
+      font-size: 14px;
       line-height: 1.9;
-      opacity: 0.86;
-      overflow-wrap: break-word;
     }
 
-    .extraits-cta .btn {
-      display: inline-flex;
+    .extraits-cta .button {
+      display: inline-block;
+    }
+
+    .extraits-footer {
+      display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 12px;
-      max-width: 100%;
-      min-height: 52px;
-      padding: 15px 26px;
-      border: 1px solid rgba(198, 107, 91, 0.9);
-      border-radius: 2px;
-      background: rgba(198, 107, 91, 0.08);
-      color: #f0e6d9;
-      font-family: "Montserrat", sans-serif;
-      font-size: 0.83rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      line-height: 1.5;
-      text-align: center;
-      text-decoration: none;
-      text-transform: uppercase;
-      overflow-wrap: anywhere;
-      transition:
-        background 0.25s ease,
-        border-color 0.25s ease,
-        transform 0.25s ease;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px 24px;
+      padding: 28px 7%;
+      border-top: 1px solid rgba(233, 223, 208, 0.2);
+      color: #c9beb3;
+      font-size: 11px;
     }
 
-    .extraits-cta .btn::after {
-      content: "↗";
-      font-size: 1.1rem;
-    }
-
-    .extraits-cta .btn:hover,
-    .extraits-cta .btn:focus-visible {
-      border-color: #d58a78;
-      background: rgba(198, 107, 91, 0.19);
-      transform: translateY(-2px);
-    }
-
-    /* ========================================
-       PIED DE PAGE
-    ======================================== */
-
-    .site-footer {
-      width: 100%;
-      max-width: 100%;
-      margin-top: 0;
-      padding: 28px 24px 34px;
-      border-top: 1px solid rgba(190, 70, 55, 0.3);
-      text-align: center;
-    }
-
-    .site-footer p {
-      max-width: 100%;
+    .extraits-footer p {
       margin: 0;
-      font-size: 0.82rem;
-      line-height: 1.8;
-      letter-spacing: 0.04em;
-      opacity: 0.72;
-      overflow-wrap: break-word;
     }
 
-    /* ========================================
-       ADAPTATION MOBILE
-    ======================================== */
+    .extraits-footer a:last-child {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+    }
 
-    @media (max-width: 600px) {
+    .extraits-footer a:hover {
+      color: #c15a5d;
+    }
+
+    @media (max-width: 760px) {
+      .extraits-page {
+        padding: 125px 16px 0;
+      }
+
       .extraits-hero {
-        padding: 65px 20px 35px;
+        margin-bottom: 36px;
       }
 
-      .extraits-hero h1 {
-        font-size: clamp(2.6rem, 12vw, 3.5rem);
+      .extraits-hero .eyebrow {
+        font-size: 10px;
       }
 
-      .extraits-intro {
-        font-size: 1rem;
-        line-height: 1.8;
+      .extraits-hero > p:last-child {
+        font-size: 13px;
       }
 
       .extraits-cards {
-        width: calc(100% - 32px);
-        margin-top: 20px;
-        margin-bottom: 45px;
+        grid-template-columns: minmax(0, 1fr);
         gap: 20px;
       }
 
       .extrait-card {
-        padding: 28px 20px;
+        padding: 27px 23px;
       }
 
       .extrait-card blockquote {
-        font-size: clamp(1.55rem, 7vw, 1.9rem);
-        line-height: 1.48;
-      }
-
-      .extrait-label {
-        font-size: 0.7rem;
-        letter-spacing: 0.13em;
-      }
-
-      .extrait-note {
-        width: calc(100% - 36px);
-        font-size: 0.94rem;
+        font-size: clamp(27px, 7vw, 35px);
       }
 
       .extraits-cta {
-        width: calc(100% - 32px);
-        margin: 48px auto 45px;
-        padding: 35px 22px 40px;
+        margin-top: 40px;
+        padding: 30px 8px 45px;
       }
 
-      .extraits-cta h2 {
-        font-size: clamp(2rem, 9vw, 2.7rem);
-      }
-
-      .extraits-cta p {
-        font-size: 0.96rem;
-        line-height: 1.8;
-      }
-
-      .extraits-cta .btn {
-        width: 100%;
-        padding-inline: 14px;
-        font-size: 0.76rem;
-        letter-spacing: 0.07em;
-      }
-
-      .site-footer {
-        padding: 24px 18px 30px;
+      .extraits-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 25px 22px;
       }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      .extraits-cta .btn {
+      .extrait-card,
+      .extraits-cta,
+      .extraits-footer {
         transition: none;
       }
     }
@@ -419,43 +240,35 @@
 </head>
 
 <body>
-
   <header class="site-header">
-    <nav class="nav-container">
-      <a href="index.html" class="logo">Danser avec le diable</a>
+    <a class="logo" href="index.html#accueil">ROMAIN<span>.R</span></a>
 
-      <button
-        class="menu-toggle"
-        aria-label="Ouvrir le menu"
-        aria-expanded="false"
-        type="button"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+    <button
+      class="menu-toggle"
+      aria-label="Ouvrir le menu"
+      aria-expanded="false"
+      aria-controls="navigation">
+      ☰
+    </button>
 
-      <div class="nav-links">
-        <a href="index.html">Accueil</a>
-        <a href="livre.html">Le livre</a>
-        <a href="auteur.html">L'auteur</a>
-        <a href="extraits.html" aria-current="page">Extraits</a>
-        <a href="ressources.html">Ressources</a>
-        <a href="faq.html">FAQ</a>
-        <a href="index.html#contact">Contact</a>
-      </div>
+    <nav class="navigation" id="navigation">
+      <a href="index.html#accueil">Accueil</a>
+      <a href="livre.html">Le livre</a>
+      <a href="auteur.html">L'auteur</a>
+      <a href="extraits.html" aria-current="page">Extraits</a>
+      <a href="faq.html">FAQ</a>
+      <a href="ressources.html">Ressources</a>
+      <a href="index.html#contact">Contact</a>
     </nav>
   </header>
 
-  <main>
-
-    <!-- INTRODUCTION -->
+  <main class="extraits-page">
     <section class="extraits-hero">
-      <p class="extrait-label">Quelques mots du livre</p>
+      <p class="eyebrow">QUELQUES MOTS DU LIVRE</p>
 
       <h1>Extraits</h1>
 
-      <p class="extraits-intro">
+      <p>
         Certaines histoires sont difficiles à raconter.
         D'autres trouvent leur chemin à travers quelques phrases.
         Voici deux passages de <em>Danser avec le diable</em>,
@@ -463,72 +276,60 @@
       </p>
     </section>
 
-    <!-- EXTRAITS DU LIVRE -->
     <section class="extraits-cards" aria-label="Extraits du livre">
-
       <article class="extrait-card">
-        <p class="extrait-label">Extrait permanent</p>
+        <span class="extrait-label">Extrait permanent</span>
 
         <blockquote>
-          « Je ne savais pas encore que certaines choses qui nous donnent
-          l’impression de voler peuvent aussi nous apprendre à tomber. »
+          « Je ne savais pas encore que certaines choses qui nous
+          donnent l’impression de voler peuvent aussi nous apprendre
+          à tomber. »
         </blockquote>
 
-        <div class="extrait-separator"></div>
-
-        <p class="extrait-reference">
-          <strong>Prologue</strong>
-          La dernière danse
+        <p class="extrait-note">
+          Un passage du prologue, « La dernière danse ».
+          Une phrase qui résume une part importante de cette histoire.
         </p>
       </article>
 
       <article class="extrait-card">
-        <p class="extrait-label">Un passage du récit</p>
+        <span class="extrait-label">Extrait évolutif</span>
 
         <blockquote>
-          « La vie, elle, continuait. Et il fallait bien que je continue
-          avec elle. »
+          « La vie, elle, continuait. Et il fallait bien que je
+          continue avec elle. »
         </blockquote>
 
-        <div class="extrait-separator"></div>
-
-        <p class="extrait-reference">
-          <strong>Partie II — Sortir de l’ombre</strong>
-          Chapitre V : Reprendre le fil de ma vie
+        <p class="extrait-note">
+          Un passage de la partie II, chapitre V,
+          « Reprendre le fil de ma vie ».
         </p>
       </article>
-
     </section>
 
-    <!-- NOTE DE FIN -->
-    <p class="extrait-note">
-      Ces extraits ne racontent pas toute l’histoire.
-      Ils en ouvrent simplement une porte.
-    </p>
-
-    <!-- CONCLUSION -->
     <section class="extraits-cta">
       <h2>Envie de découvrir la suite&nbsp;?</h2>
 
       <p>
-        <em>Danser avec le diable</em> est un récit personnel
-        sur l’addiction, les blessures, les silences et le chemin
-        parfois fragile vers la reconstruction.
+        Ces extraits ne racontent pas toute l’histoire.
+        Ils en ouvrent simplement une porte.
       </p>
 
-      <a href="livre.html" class="btn">
-        Découvrir le livre
+      <a class="button" href="livre.html">
+        DÉCOUVRIR LE LIVRE <span>↗</span>
       </a>
     </section>
-
   </main>
 
-  <footer class="site-footer">
-    <p>© 2026 Romain.R — Danser avec le diable</p>
+  <footer class="extraits-footer">
+    <a class="logo" href="index.html#accueil">ROMAIN<span>.R</span></a>
+
+    <p>© 2026 Romain.R — <em>Danser avec le diable</em></p>
+
+    <a href="index.html#accueil">RETOUR À L'ACCUEIL ↑</a>
   </footer>
 
   <script src="script.js"></script>
-
 </body>
 </html>
 ```
